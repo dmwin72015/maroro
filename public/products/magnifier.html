@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+    body{background:#efefef;}
+    div {
+        width: 383px;
+        height: 240px;
+    }
+    div.title{
+        height:30px;
+        margin-left:50px;
+        font-size:30px;
+    }
+    .small {
+        position: relative;
+        overflow: hidden;
+        float: left;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+    .small>img{
+        display:block;
+        width:100%;
+        height:100%;
+    }
+    .mouse {
+        width: 100px;
+        height: 100px;
+        background: pink;
+        opacity: 0.5;
+        position: absolute;
+        left: 0;
+        top: 0;
+        visibility: hidden;
+        cursor: all-scroll;
+    }
+    
+    .big {
+        overflow: hidden;
+        background: #eff;
+        margin-left: 30px;
+        float: left;
+        position: relative;
+        margin-top: 20px;
+    }
+    
+    .big img {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    </style>
+    <script>
+    ready(seeBig);
+    function seeBig(){var oS=$ID("sbox");var oMou=$ID("mouse");var oB=$ID("bbox");var oBimg=$ID("bimg");var minLeft=minTop=0;var maxMLeft=oS.offsetWidth-oMou.offsetWidth;var maxMTop=oS.offsetHeight-oMou.offsetHeight;var maxILeft=0;var maxITop=0;oBimg.onload=function(){maxILeft=oBimg.clientWidth-oS.offsetWidth;maxITop=oBimg.clientHeight-oS.offsetHeight;addEvent(oS,"mouseover",function(ev){oMou.style.visibility="visible";var oEv=ev||event;var x=oEv.clientX;var y=oEv.clientY;var oR=oEv.fromElement||oEv.releatedTarget;if(oR&&!oS.contains(oR)){var left=x-oS.offsetLeft-oMou.offsetWidth/2;var top=y-oS.offsetTop-oMou.offsetHeight/2;if(left<=0){left=0}else{if(left>=maxMLeft){left=maxMLeft}}if(top<=0){top=0}else{if(top>=maxMTop){top=maxMTop}}oMou.style.left=left+"px";oMou.style.top=top+"px";addEvent(oS,"mousemove",move);oB.style.display="block"}})};addEvent(oS,"mouseout",function(ev){oMou.style.visibility="hidden";var oEv=ev||event;var x=oEv.clientX;var y=oEv.clientY;var oReleat=oEv.toElement||oEv.releatedTarget;var oReleat2=oEv.toElement||oEv.releatedTarget;if(oReleat&&!oS.contains(oReleat)){oB.style.display="none";remEvent(oS,"mousemove",move)}});function move(ev){var oEv=ev||event;var x=oEv.clientX;var y=oEv.clientY;var left=x-getPos(oMou.offsetParent).left-oMou.offsetWidth/2;var top=y-getPos(oMou.offsetParent).top-oMou.offsetHeight/2;if(left<=0){left=0}else{if(left>=maxMLeft){left=maxMLeft}}if(top<=0){top=0}else{if(top>=maxMTop){top=maxMTop}}oMou.style.left=left+"px";oMou.style.top=top+"px";oBimg.style.left=-(left/maxMLeft*maxILeft)+"px";oBimg.style.top=-(top/maxMTop*maxITop)+"px"}};function ready(fn){if(document.addEventListener){document.addEventListener("DOMContentLoaded",fn,false)}else{document.attachEvent("onreadystatechange",function(){if(document.readyState=="complete"){fn()}})}}function addEvent(obj,sEv,fn,bflag){if(obj.addEventListener){if(bflag!==true){bflag=false}obj.addEventListener(sEv,fn,bflag)}else{obj.attachEvent("on"+sEv,fn)}}function remEvent(obj,sEv,fn,bflag){if(obj.removeEventListener){if(bflag!==true){bflag=false}obj.removeEventListener(sEv,fn,bflag)}else{obj.detachEvent("on"+sEv,fn)}}function addWheel(obj,fn,bflag){if(window.navigator.userAgent.toLowerCase().indexOf("firefox")!=-1){if(bflag!==true){bflag=false}obj.addEventListener("DOMMouseScroll",_wheel,bflag)}else{obj.onmousewheel=_wheel}function _wheel(ev){var oEv=ev||event;var down=false;if(oEv.wheelDelta){down=oEv.wheelDelta<0?true:false}else{down=oEv.detail<0?false:true}fn(down,oEv)}}function remWheel(obj,fn,bflag){if(window.navigator.userAgent.toLowerCase().indexOf("firefox")!=-1){if(bflag!==true){bflag=false}obj.removeEventListener("DOMMouseScroll",_wheel,bflag)}else{obj.onmousewheel=null}function _wheel(ev){var oEv=ev||event;var down=false;if(oEv.wheelDelta){down=oEv.wheelDelta<0?true:false}else{down=oEv.detail<0?false:true}fn(down,oEv)}}var WheelEvent={edition:window.navigator.userAgent.toLowerCase().indexOf("firefox"),f:null,_wheel:function(fn){return WheelEvent.prototype.f},add:function(obj,fn,bflag){this.f=fn;if(this.edition!=-1){if(bflag!==true){bflag=false}obj.addEventListener("DOMMouseScroll",this._wheel(fn),bflag)}else{obj.onmousewheel=this._wheel(fn)}},remove:function(obj,fn,bflag){this.f=fn;if(this.edition!=-1){if(bflag!==true){bflag=false}obj.removeEventListener("DOMMouseScroll",this._wheel(fn),bflag)}else{obj.onmousewheel=null}}};function str2Unicde(str,bcss){var val=[];for(var i=0;i<str.length;i++){val.push(str.charCodeAt(i).toString(16))}if(bcss===true){return val.join("\\")}else{return val.join(",")}}function $ID(id){return document.getElementById(id)}function getPos(obj){var a=0;var b=0;while(obj){a+=obj.offsetTop;b+=obj.offsetLeft;obj=obj.offsetParent}return{top:a,left:b}}function move(obj,distance,time,direction){var o=obj,ds=distance,t=time,dr=direction;var start=0;if(dr=="left"){start=o.offsetLeft}else{if(dr=="top"){start=o.offsetTop}else{}}var count=Math.floor(t/30);var n=0;var timmer=setInterval(function(){n++;o.style[dr]=start+ds*n/count+"px";if(n==count){clearInterval(timmer)}},30)}function addMouseover(obj){obj.onmouseover=function(ev){var oEv=ev||event;var oSrc=oEv.fromElement||oEv.relatedTarget;if(!obj.contains(oSrc)){fn()}}}function isOverOrOut(obj,ev){var oEv=ev||window.event;var type=oEv.type;var oReleat=null;var b=false;if(type=="mouseover"){oReleat=oEv.toElement||oEv.relatedTarget}else{if(type=="mouseout"){oReleat=oEv.fromElement||oEv.relatedTarget}}if(oReleat&&obj.contains(oReleat)){b=true}return b}function getStyle(obj,name){return obj.currentStyle?obj.currentStyle[name]:getComputedStyle(obj,false)[name]};
+    </script>
+</head>
+
+<body>
+    <div class="title">商城放大镜</div>
+    <div class="small" id="sbox">
+        <img src="../images/magnifier.jpg" alt="">
+        <div class="mouse" id="mouse"></div>
+    </div>
+    <div class="big" id="bbox">
+        <img src="../images/magnifier.jpg" alt="" id="bimg">
+    </div>
+</body>
+
+</html>

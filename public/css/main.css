@@ -1,0 +1,80 @@
+@charset "utf-8";
+body { min-width: 840px; }
+.skin-background { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -10; background-repeat: no-repeat; background-position: center 0; background-size: cover; }
+.topbar { width: 100%; height: 35px; z-index: 1000; }
+.topbg { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: linear-gradient(rgba(15, 25, 50, .5) 0, rgba(15, 25, 50, .5) 100%); filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#4C0F1932, endColorStr=#4C0F1933, gradientType=0); }
+.topmenu { position: absolute; left: 0px; top: 0; }
+.weatherBox, .avatar { float: left; height: 100%; }
+.avatar { width: 85px; height: 35px; margin-left: 15px; background: transparent url('../images/icon.png') no-repeat 0 -24px; }
+.weatherBox { margin-left: 10px; position: relative;}
+.weatherBox.unkown-city .weather-now { display: none; }
+.weather-now {cursor:pointer;}
+.weather-now>span { display: inline-block; vertical-align: middle; height: 100%; line-height: 35px; color: #fff; font-size: 14px; }
+.weather-now>span.weather-icon { width: 18px; height: 18px; }
+/*-------------------------*/
+.weather-detail-setting { font-family:arial; top:35px;left:0;position: absolute; width: 540px; height: 200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background-color: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);}
+.weather-detail-setting:after{
+	content:'';
+	border:10px solid transparent ;
+	border-bottom-color: #fff;
+	position: absolute;
+	top:-15px;
+	left:13px;
+}
+.detail,.city-select{position: relative;}
+.date { margin-left: 15px; margin-right: 15px; font-size: 14px; color: #666; border-bottom: 1px solid #ececec; }
+.date>span{ display: inline-block; vertical-align: middle; line-height: 32px; }
+.future-7>a{font-size:12px; margin-left:20px; color:#0079f4;}
+.set-btn { float: right; }
+.recently-day { padding-left: 15px; padding-right: 15px; }
+.recently-day a { text-decoration: none; color: #333 ;}
+.today h3{}
+.recently-day .day-item {white-space:nowrap; float: left; width: 86px; text-align: center; font-size: 12px; padding-top: 5px; padding-bottom: 5px; }
+.day-item:hover { background-color: #eaeaea; }
+.recently-day .day-item +.day-item { margin-left: 20px; }
+.day-item h3{font-weight:normal;}
+.day-item .wea-icon { width: 80px; height: 80px; margin-left: 3.5px;margin-top:2px; background-image: url(../images/blue80.png); }
+.day-item.today,.day-item.today h3 { font-weight: bold; }
+.day-item p { margin-top: 4px; }
+/*-------------------------*/
+
+.myresume>a { display: inline-block; padding: 7px 15px; color: #fff; font-size: 16px; }
+.myresume a:hover { text-decoration: underline; }
+.myresume { float: right; position: relative; height: 100%; right: 15px; }
+.wrapper { width: 100%; overflow: hidden; position: relative; background: rgba(232, 230, 231, 0.4); min-width: 1216px; padding-bottom: 30px; }
+.banner { width: 100%; height: 180px; background: url(../images/bg_banner.jpg) no-repeat; background-size: cover; background-position: 0 0; overflow: hidden; }
+#mylogo { width: 120px; height: 120px; margin: 0px auto; margin-top: 40px; overflow: hidden; position: relative; }
+#mylogo .back { transform: rotateY(180deg); }
+#mylogo:hover .front { transform: rotateY(180deg); }
+#mylogo:hover .back { transform: rotateY(0deg); }
+#mylogo img { position: absolute; top: 0; left: 0; width: 100%; transition: all 0.5s; backface-visibility: hidden; border-radius: 50%; }
+.product-wrapper { padding: 0 8px; padding-top: 30px; overflow: hidden; }
+.innner-wapper { float: left; position: relative; left: 50%; }
+.product-list { position: relative; float: left; left: -50%; overflow: hidden; }
+.product-list>li { float: left; width: 228px; }
+.product-list>li + li { margin-left: 15px; }
+.pro-item { overflow: hidden; position: relative; margin-bottom: 12px; background: #fefefe; padding: 10px; padding-bottom: 0; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.pro-item .pic, .pro-item .pic img { display: block; width: 100%; border: none; }
+.pro-item .name, .pro-item .time { font-size: 14px; line-height: 26px; padding: 2px 0; color: #444; }
+.pro-item .time { border-top: 1px solid #e0e0e0; }
+.leftup { position: absolute; left: 0; top: 0; width: 80px; height: 80px; background: url(../products/images/bak.png); background-position: 0 0; background-size: cover; }
+
+/*底部*/
+.footer { width: 100%; min-width: 1216px; background: #2b2f3e; font-size: 12px; bottom: 0; left: 0; }
+.footer>ul { padding: 10px 30px; overflow: hidden; }
+.footer>ul>li:nth-child(1) { width: 30%; }
+.footer>ul>li { float: left; width: 20%; }
+.footer a, .footer p, .footer span, .footer h3, .copyright { color: #A2A2A2; }
+.footer>ul>li+li { margin-left: 20px; }
+.footer>ul li .title { font-size: 16px; line-height: 24px; font-weight: bold; }
+.friendly >li, .thanks>li, .description, .QQ, .github { padding: 3px 0; }
+.friendly a, .thanks a, .github a { transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1); }
+.friendly a:hover, .thanks a:hover, .github a:hover { color: #D4D4D4;	/*text-shadow:1px 1px #fff;*/ text-shadow: 0 0 3px #fff; }
+.copyright { text-align: center; line-height: 34px; border-top: 1px solid #b3b3b3; }
+
+/*回到顶部样式*/
+#toTop { position: fixed; right: 40px; bottom: 40px; width: 46px; height: 46px; background: rgba(0, 0, 0, 0.5); color: #fff; cursor: pointer; display: none; transition: all 0.4s; }
+.arrow { display: block; text-align: center; font-size: 34px; line-height: 46px; }
+#toTop:hover>.arrow { display: none; }
+#toTop>.text { display: none; font-size: 16px; word-wrap: break-word; text-align: center; }
+#toTop:hover>.text { display: block; }

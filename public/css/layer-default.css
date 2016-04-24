@@ -1,0 +1,198 @@
+@charset "utf-8";
+/*默认的样式*/
+body {
+    background-image: url(http://az29176.vo.msecnd.net/videocontent/AprilFools_Puffins_768_HD_ZH-CN1593807140.jpg);
+    background-size: cover;
+    padding-bottom: 200px;
+}
+
+.layer_alert, .layer_confirm, .layer_prompt, .layer_tips {
+    position: absolute;
+}
+
+/*容器*/
+.layer_wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+/*背景*/
+.layer_bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.3;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    filter: alpha(opacity=30);
+}
+
+/*通用弹框、按钮*/
+.layer_content_box {
+    z-index: 10;
+    min-width: 260px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 1px 1px 50px rgba(0, 0, 0, 0.5);
+    left: 50%;
+    margin-left: -130px;
+}
+
+.layer_content_box.no-title { /*没标题*/
+    min-width: 100px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: none;
+    color: #fff;
+}
+
+.layer_title {
+    background: #eee;
+    border-bottom: 1px solid #e6e6e6;
+    padding: 5px 15px;
+    position: relative;
+}
+
+.layer_close {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    margin-top: -8px;
+    right: 10px;
+    background: url(../images/layer_icon.png) 0 -40px no-repeat;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.layer_close:hover {
+    opacity: 1;
+}
+
+.inner_content_box {
+    padding: 15px;
+}
+
+.showText {
+    display: block;
+    padding: 0 10px 15px 10px;
+}
+.layer_content_box.no-title .showText {
+    padding:0 5px 15px;
+}
+.btn_box {
+    padding: 0 20px;
+    overflow: hidden;
+    text-align: right;
+}
+
+/*按钮*/
+.layer_btn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 3px 12px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    background: #fafafa;
+    color: #333;
+}
+
+.layer_btn:hover {
+    color: #333;
+}
+
+.layer_btn.btn0 {
+    margin-right: 15px;
+    background-color: #2e8ded;
+    border-color: #4898d5;
+    color: #fff;
+}
+
+.layer_btn.btn0:hover {
+    background-color: #046DD8;
+}
+
+.layer_btn.btn1:hover {
+    background-color: #DEDEDE;
+}
+
+.layer_btn.active
+.layer_btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+}
+
+.prompt_input_box {
+    padding: 10px 0 16px;
+}
+
+.prompt_input {
+    display: block;
+    width: 220px;
+    height: 30px;
+    margin: 0 auto;
+    line-height: 30px;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .1) inset;
+    color: #333;
+}
+
+.no-title .showText {
+    text-align: center;
+}
+
+.layer_tips.layer_content_box {
+    padding: 5px;
+}
+
+.layer_tips {
+    border-radius: 5px;
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.layer_tips:after {
+    position: absolute;
+    content: ' ';
+    border-width:8px;
+    border-color: transparent;
+    border-style: solid;
+}
+.left.layer_tips:after,.right.layer_tips:after{
+    border-bottom: 5px solid #fff;
+}
+.left.layer_tips:after {
+    left: -8px;
+    top: 5px;
+}
+
+.right.layer_tips:after {
+    right: -8px;
+    top: 5px;
+}
+.up.layer_tips:after,.down.layer_tips:after{
+    border-left: 8px solid #fff;
+}
+.up.layer_tips:after {
+    top:-8px;
+    left:20px;
+}
+.down.layer_tips:after {
+    bottom: -8px;
+    left: 20px;
+}
+
+/*主题*/
+.grey .title {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e3e3e3;
+}

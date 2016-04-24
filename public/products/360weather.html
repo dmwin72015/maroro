@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>天气预报</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="./css/weather.css">
+</head>
+
+<body>
+    <header class="header">
+        <h3>天气预报 </h3>
+    </header>
+    <div class="contentWrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="address clearfix">
+                        <li>
+                            <div class="btn-group">
+                                <a href="javascript:;" class="btn btn-primary" id="province">请选择</a>
+                                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </a>
+                                <div class="dropdown-menu province-list" id="provinceList">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="btn-group">
+                                <a href="javascript:;" class="btn btn btn-primary" id="city">请选择</a>
+                                <a class="btn btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </a>
+                                <div class="dropdown-menu city-list" id="cityList">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="btn-group">
+                                <a href="javascript:;" class="btn btn btn-primary" id="town">请选择</a>
+                                <a class="btn btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </a>
+                                <div class="dropdown-menu town-list" id="townList">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="search">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box box-solid box-primary ">
+                        <div class="box-header">
+                            <h3 class="box-title">今天天气</h3>
+                            <div class="box-tool"><a href="javascript:;">More</a></div>
+                        </div>
+                        <div class="box-body cuurentWeather">
+                            <div class="thermometer">
+                                <div class="ther-pipe"></div>
+                                <div class="ther-ball"></div>
+                                <div class="ther-scale">
+                                    <ul>
+                                        <li>30</li>
+                                        <li>15</li>
+                                        <li>0</li>
+                                        <li>-15</li>
+                                        <li>-30</li>
+                                    </ul>
+                                </div>
+                                <div class="currentTemperature">
+                                    <!--<span class="num"></span>-->
+                                    <!--<span class="Symbol">℃</span>-->
+                                </div>
+                            </div>
+                            <p class="time"></p>
+                            <p class="pm25">PM:</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="box box-solid box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">24小时温度变化</h3>
+                            <div class="box-tool"></div>
+                        </div>
+                        <div class="box-body temp-line" >
+                            <div id="hours_temp">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box box-solid box-primary">
+                        <div class="box-header">
+                            <h3 class="box-title">最近五天天气变化</h3>
+                        </div>
+                        <div class="box-body future_5Day">
+                            <ul class="clearfix" id="future_five">
+                                <li>
+                                    <div class="everyday">
+                                        <!--<h3>${date}</h3>-->
+                                        <!--<p class="big-icon ${icon}"></p>-->
+                                        <!--<p class="summary">${wea_summary}</p>-->
+                                        <!--<p class="sky">${wea_sky}</p>-->
+                                        <!--<p class="temp">-->
+                                            <!--<span>${wea_temp}</span>-->
+                                            <!--<em>℃</em>-->
+                                        <!--</p>-->
+                                        <!--<p class="win">${wind}</p>-->
+                                        <!--<p>日出${sun_up}/日落${sun_down}</p>-->
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="everyday" >
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="everyday" >
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="everyday" >
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="everyday" >
+
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="everyday" >
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="./js/weather.js"></script>
+<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+
+</html>

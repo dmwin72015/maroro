@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>测试弹框插件</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/layer-default.css">
+    <script src="../js/tools/jquery-1.12.2.min.js"></script>
+    <script src="../js/modules/myLayers.js"></script>
+    <style>
+        #test{
+            padding:5px;
+            border:1px solid #eee;
+            color:#333;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: #008CBA;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="测试遮罩层" id="test">
+    <div class="box" id="box">
+
+
+
+    </div>
+</body>
+<script>
+$(function() {
+    var layer1 = $('body').eq(0).Layers({
+        style:{
+            'margin-top':'50px'
+        }
+    });
+    var layer2 = $.Layers();
+    console.log(layer1 == layer2);
+    $('#test').click(function() {
+        // layer.confirm('嘻嘻嘻嘻！', function(ev) {
+        //     alert('YES');
+        // }, function(ev) {
+        //     alert('NO');
+        // });
+        layer1.confirm('哈哈哈',{
+            infoText:'五的',
+            titleText:false
+        },function(){
+//            alert('OK');
+        },function(){
+//            alert('NO');
+        });
+    });
+})
+</script>
+
+</html>

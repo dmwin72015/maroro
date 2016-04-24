@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>${title}</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/myresume_new.css">
+    <style>
+        body { min-width: 700px,height: auto; }
+        .footer { width: 100%; background: #2b2f3e; font-size: 12px; bottom: 0; left: 0; }
+        .footer>ul { padding: 10px 30px; overflow: hidden; }
+        .footer>ul>li:nth-child(1) { width: 30%; }
+        .footer>ul>li { float: left; width: 20%; }
+        .footer a, .footer p, .footer span, .footer h3, .footer ul,.footer li,.copyright { color: #A2A2A2;font-size:12px;line-height:normal; }
+        .footer>ul>li+li { margin-left: 20px; }
+        .footer>ul li .title { font-size: 16px; line-height: 24px; font-weight: bold; }
+        .footer .friendly >li, .thanks>li, .description, .QQ, .github { padding: 3px 0; }
+        .footer .friendly a, .thanks a, .github a { transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1); }
+        .footer .friendly a:hover, .thanks a:hover, .github a:hover { color: #D4D4D4; text-shadow: 0 0 3px #fff; }
+        .footer .copyright { text-align: center; line-height: 34px; border-top: 1px solid #b3b3b3; }
+
+    </style>
+</head>
+
+<body>
+    <header class="topbar top-fix">
+        <nav class=" ">
+            <ul class="breadcrumb ">
+                <li>
+                    <a href="" title="">首页</a>
+                </li>
+                <li class="active">
+                    getElementsByClassName
+                </li>
+                <li><h3 style="display: inline;font-weight: bold;color: red">这仅仅是一个静态的测试页面。涉及到后台交互,此功能正在建(chou)设(si)当中。。。。</h3></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mainWraper">
+        <section class="content">
+            <div class="name">
+                <h3>getElementsByClassName(className)<i class="label bg-red">H5</i></h3>
+            </div>
+            <div class="desc">
+                <h5>概述</h5>
+                <p>
+                    根据提供的原始 HTML 标记字符串，动态创建由 jQuery 对象包装的 DOM 元素。同时设置一系列的属性、事件等。 你可以传递一个手写的 HTML 字符串，或者由某些模板引擎或插件创建的字符串，也可以是通过 AJAX 加载过来的字符串。但是在你创建 input
+                </p>
+            </div>
+            <div class="param">
+                <h5>参数</h5>
+                <div class="paramItem">
+                    <span class="paramName">className</span>
+                    <span class="paramType">string</span>
+                    <p class="paramdesc"> 传入的class名称</p>
+                </div>
+                <div class="paramItem">
+                    <span class="paramName">className</span>
+                    <span class="paramType">string</span>
+                    <p class="paramdesc">传入的class名称</p>
+                </div>
+            </div>
+            <div class="example">
+                <h5>示例</h5>
+                <div class="e-item">
+                    <span class="item-title">示例一</span>
+                    <p class="item-desc text_cn">
+                        获取所有class名字为test的元素
+                    </p>
+                    <h6 class="">javascript代码：</h6>
+                    <code>
+                        var aTest = document.getElementsByClassName('test');
+                    </code>
+                </div>
+            </div>
+            <div class="e-item">
+                <span class="item-title">示例二</span>
+                <p class="item-desc text_cn">
+                    获取所有class名字为test的元素
+                </p>
+                <h6 class="">javascript代码：</h6>
+                <code>
+                    var aTest = document.getElementsByClassName('test');
+                </code>
+            </div>
+            <div class="support">
+                <h5>兼容性</h5>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>IE</th>
+                            <th>FF</th>
+                            <th>Chrome</th>
+                            <th>other</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>9+</th>
+                            <th>3.0+</th>
+                            <th>Yes</th>
+                            <th>UnKwon</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section class="pageturn clearfix">
+            <a href="" title="" class="prevp">上一篇:aaaaaaa</a>
+            <a href="" title="" class="nextp">下一篇:bbbbbbbb</a>
+        </section>
+    </div>
+    <footer class="footer clearfix">
+        <ul>
+            <li>
+                <h3 class="title">前端</h3>
+                <p class="description">
+                    本站所有内容都由本人制作，放在此处分享给大家，供学习、参考。
+                    <br/> 有任何疑问可以QQ联系我，大家一起学习共同进步。
+                </p>
+            </li>
+            <li>
+                <h3 class="title">友情链接</h3>
+                <ul class="friendly">
+                    <li><a href="https://developer.mozilla.org" target="_blank">MDN</a></li>
+                    <li><a href="http://huaban.com/" target="_blank">花瓣</a></li>
+                    <li><a href="http://tool.oschina.net/" target="_blank">在线工具-开源中国社区</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3 class="title">感谢</h3>
+                <ul class="thanks">
+                    <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
+                    <li><a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a></li>
+                    <li><a href="http://glyphicons.com/" target="_blank">Glyphicons </a></li>
+                </ul>
+            </li>
+            <li>
+                <p class="title">交流</p>
+                <p class="QQ">QQ：57682575</p>
+                <p class="github"><a href="https://github.com/dmwin72015/myresume" target="_blank">GitHub：dmwin72015</a></p>
+            </li>
+        </ul>
+        <p class="copyright">
+            copyright&nbsp;&copy;2016&nbsp;DongMin &nbsp;All rights reserved.
+        </p>
+    </footer>
+</body>
+
+</html>

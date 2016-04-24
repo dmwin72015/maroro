@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>狗狗</title>
+    <style>
+ul { list-style: none; margin: 0; padding: 0; }
+.wapper { padding: 10px; width: 450px; height: 450px; border: 1px solid red; margin: 0 auto; margin-top: 10px; }
+.wapper ul { width: 450px; height: 450px; overflow: hidden;}
+.wapper li { width: 130px; height: 130px; margin: 10px; position: relative; float: left;/* border:2px solid red; */}
+.wapper li span { display: block; position: absolute; left: 0; top: 0; width: 130px; height: 130px; background: rgba(23, 172, 90, 0.0); font-size: 100px; text-align: center; line-height: 130px; }
+img { display: block; width: 100%; }
+.wapper li span.active { width: 124px; height: 124px; border: 3px dashed red; }</style>
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="./js/move.js"></script>
+    <script>
+window.onload=function(){var $aLi=$("li");var zIndex=2;var pos=[];$.each($aLi,function(index,item){var _this=$(this);_this.get(0).index=index;pos.push({left:_this.position().left,top:_this.position().top})});$.each($aLi,function(index,item){var _this=$(this);_this.css({left:pos[index].left+"px",top:pos[index].top+"px",position:"absolute"})});$aLi.mousedown(function(event){var _this=$(this);var _that=$(this).get(0);var _thatPos={left:parseFloat(_this.css("left")),top:parseFloat(_this.css("top"))};var disX=event.pageX-_this.position().left;var disY=event.pageY-_this.position().top;var oNear=null;$(document).mousemove(function(event){var bflag=false;_this.css({left:event.pageX-disX,top:event.pageY-disY,zIndex:zIndex});$.each($aLi,function(index,domELe){if(_this.get(0)!=domELe){if(collTest(_this.get(0),domELe)){oNear=findNear(_this,$aLi);if(oNear){$.each($aLi,function(index,_domELe){_domELe.children[1].className=""});oNear.children("span").addClass("active")}bflag=true}else{domELe.children[1].className="";bflag=false}}})});$(document).mouseup(function(){var flag=false;$(document).unbind();$.each($aLi,function(index,domELe){if(_this.get(0)!=domELe){if(collTest(_this.get(0),domELe)){flag=true;return false}}});if(flag&&oNear){var tmpNear=oNear.get(0);var tmpNearPos={left:parseFloat(oNear.css("left")),top:parseFloat(oNear.css("top"))};moveOne(_that,tmpNearPos,{duration:300,easing:Tween.Cubic.easeIn});moveOne(tmpNear,_thatPos,{duration:300,easing:Tween.Cubic.easeIn});oNear.children("span").removeClass("active");_this.css("zIndex",0)}});event.preventDefault()})};function findNear(obj,oArr){if(!(obj instanceof jQuery)){obj=$(obj1)}if(!(oArr instanceof jQuery)){oArr=$(obj2)}var nMin=9999;var nMinIndex=-1;oArr.each(function(index,domEle){if(obj.get(0)!=domEle){if(collTest(obj.get(0),domEle)){var dis=getDis(obj,domEle);if(dis<nMin){nMin=dis;nMinIndex=index}}}});if(nMinIndex==-1){return null}else{return oArr.eq(nMinIndex)}}function getDis(obj1,obj2){if(!(obj2 instanceof jQuery)){obj1=$(obj1)}if(!(obj2 instanceof jQuery)){obj2=$(obj2)}var w=(obj1.offset().left+obj1.outerWidth()/2)-(obj2.offset().left+obj2.outerWidth()/2);var h=(obj1.offset().top+obj1.outerHeight()/2)-(obj2.offset().top+obj2.outerHeight()/2);return Math.sqrt(w*w+h*h)};
+    </script>
+</head>
+
+<body>
+    <h3 style="text-align: center;">萌宠物大互换</h3>
+    <div class="wapper">
+        <ul>
+            <li><img src="images/dog1.jpg" alt=""><span></span></li>
+            <li><img src="images/dog2.jpg" alt=""><span></span></li>
+            <li><img src="images/dog3.jpg" alt=""><span></span></li>
+            <li><img src="images/dog4.jpg" alt=""><span></span></li>
+            <li><img src="images/dog5.jpg" alt=""><span></span></li>
+            <li><img src="images/dog6.jpg" alt=""><span></span></li>
+            <li><img src="images/dog7.jpg" alt=""><span></span></li>
+            <li><img src="images/dog8.jpg" alt=""><span></span></li>
+            <li><img src="images/dog9.jpg" alt=""><span></span></li>
+        </ul>
+    </div>
+</body>
+
+</html>

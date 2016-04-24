@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>自定义单选按钮</title>
+    <style>
+    @charset="utf-8";body{background:#eee}ul{margin:0;padding:0;list-style:none}.con_all{width:100%;height:195px;margin-left:20px}.con_radio{width:220px;height:195px;margin:0 auto;float:left}.clear{clear:both}.con_radio label{display:block;width:40px;height:20px;position:relative;padding:5px;overflow:hidden;cursor:pointer}.con_radio label>input[type=radio]{display:inline-block;position:absolute;top:0;left:-9999px;z-index:-1;margin:2px}.con_radio .span_radio_selected{display:inline-block;width:9px;height:9px;border:4px solid #08a5da;border-radius:100%;background:white}.con_radio .span_radio_unselected{display:inline-block;width:9px;height:9px;border:4px solid #aaa;border-radius:100%;background:#aaa;margin:auto}.con_radio .span_value{display:inline-block;position:absolute;top:1px;left:30px;width:13px;height:13px;font-size:20px;font-family:"Ubuntu Mono","微软雅黑";font-weight:bold}.con_radio_img{width:220px;height:195px;margin:0 auto;float:left}.con_radio_img li{display:block;width:72px;height:20px;margin-top:10px;background:url(../images/icon.png) no-repeat ;background-position:-97px 0;padding-left:28px;font-weight:bold;cursor:pointer}.con_radio_img .selected{background-position:-97px -50px}.con_checkbox{width:220px;height:195px;margin:0 auto;float:left}.con_checkbox li{display:block;width:72px;height:20px;margin-top:10px;background:url(../images/icon.png) no-repeat;background-position:-97px -100px;padding-left:28px;font-weight:bold;cursor:pointer}.con_checkbox .selected{background-position:-97px -150px}</style>
+    <script type="text/javascript">
+   window.onload=function(){var oLabels=document.getElementsByTagName("label");for(var i=0;i<oLabels.length;i++){oLabels[i].onclick=function(){for(var i=0;i<oLabels.length;i++){oLabels[i].getElementsByTagName("span")[0].className="span_radio_unselected";this.getElementsByTagName("span")[0].className="span_radio_selected"}}}var oDiv2=document.getElementById("div2");var oLis2=oDiv2.getElementsByTagName("li");for(var i=0;i<oLis2.length;i++){oLis2[i].onclick=function(){for(var i=0;i<oLis2.length;i++){oLis2[i].className=""}this.className="selected"}}var oDiv3=document.getElementById("div3");var oLis3=oDiv3.getElementsByTagName("li");for(var i=0;i<oLis3.length;i++){oLis3[i].onclick=function(){if(!this.className){this.className="selected"}else{this.className=""}}}};
+    </script>
+</head>
+
+<body>
+    <div class="con_all">
+        <div class="con_radio">
+            <h3>CSS样式单选框</h3>
+            <label>
+                <span class="span_radio_selected"></span>
+                <span class="span_value">A</span>
+                <!-- <input type="radio" value="1" name="lr"> -->
+            </label>
+            <label>
+                <span class="span_radio_unselected"></span>
+                <span class="span_value">B</span>
+                <!-- <input type="radio" value="1" name="lr">B -->
+            </label>
+            <label>
+                <span class="span_radio_unselected"></span>
+                <span class="span_value">C</span>
+                <!-- <input type="radio" value="1" name="lr">C -->
+            </label>
+            <label>
+                <span class="span_radio_unselected"></span>
+                <span class="span_value">D</span>
+                <!-- <input type="radio" value="1" name="lr">D -->
+            </label>
+        </div>
+
+         <div id="div2" class="con_radio_img">
+            <h3>图片单选框</h3>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+        <div id="div3" class="con_checkbox">
+            <h3>图片复选框</h3>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</body>
+
+</html>

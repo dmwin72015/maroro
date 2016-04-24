@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5 画板</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="./css/drawboard.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="./js/drawboard.js"></script>
+</head>
+
+<body>
+    <div class="tool-wapper">
+        <ul class="tool-list">
+            <li>
+                <div class="icon pen"><i class="">笔</i></div>
+                <div>
+                </div>
+            </li>
+            <li>
+                <div class="icon line"><i class="">形</i></div>
+                <div>
+                </div>
+            </li>
+            <li>
+                <div class="icon"><i class=""></i></div>
+                <div>
+                </div>
+            </li>
+            <li>
+                <div class="icon color"><i class=""></i></div>
+                <div class="choosepanel hide">
+                    <section class="color choose clearfix ">
+                        <div class="color-panel">
+                            <a href="javascript:;"></a>
+                        </div>
+                        <div class="color-drag">
+                            <span class="dragbar"></span>
+                        </div>
+                        <div class="color-number clearfix">
+                            <div class="number-rgb">
+                                <ul>
+                                    <li><span>R</span>
+                                        <input type="text">
+                                    </li>
+                                    <li><span>G</span>
+                                        <input type="text">
+                                    </li>
+                                    <li><span>B</span>
+                                        <input type="text">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="number-hsb ">
+                                <ul>
+                                    <li><span>H</span>
+                                        <input type="text">
+                                    </li>
+                                    <li><span>S</span>
+                                        <input type="text">
+                                    </li>
+                                    <li><span>B</span>
+                                        <input type="text">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="number-hex">
+                                <span>#</span>
+                                <input type="text">
+                                <input type="button" value="choose">
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </li>
+            <li>
+                <div class="icon lineWidth"><i class=""></i></div>
+                <div class="lineWidthpanel">
+                    <ul class="lineWidth-list">
+                        <li>
+                            <span data-width="1"></span>
+                        </li>
+                        <li>
+                            <span data-width="3"></span>
+                        </li>
+                        <li>
+                            <span data-width="5"></span>
+                        </li>
+                        <li>
+                            <input type="text">PX   
+                        </li>
+                        <li>
+                            <input type="button" value="OK">
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li></li>
+        </ul>
+    </div>
+    <div class="drawboard-wapper">
+        <canvas width="500" height="500" id="mycanvas">亲！你的浏览器Too Old啦</canvas>
+    </div>
+</body>
+
+</html>

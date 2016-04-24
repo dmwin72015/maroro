@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>董敏-冲向前端-个人主页</title>
+    <meta name="keywords" content="web前端,JS,jQuery,前端开发,JS爱好者,知识在于积累" />
+    <meta name="description" content="董敏的web前端工程师个人主页">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/underscore-1.7.0.min.js"></script>
+    <script src="../js/myweb.js"></script>
+</head>
+
+<body>
+    <div class="skin-background" id="skinBackPic" style="_background-color:rgb(100,160,133);_background-image:url('https://ss0.bdstatic.com/l4oZeXSm1A5BphGlnYG/skin/627.jpg?2');background-image:url(http://s.cn.bing.net/az/hprichbg/rb/SaffrondropBonnet_ZH-CN11415710429_1920x1080.jpg)"></div>
+    <header class="topbar fix-top clearfix">
+        <div class="topbg"></div>
+        <div class="topmenu clearfix">
+            <div class="avatar" id="avatar">
+            </div>
+            <div class="weatherBox">
+                <div class="weather-now" id="weather">
+                        <span class="city-name">北京</span>
+                        <span class="weather-icon" id="wea_icon"></span>
+                        <span class="temperature"></span>
+                </div>
+                <div class="weather-detail-setting hide" id="weatherShow">
+                    <div class="detail">
+                        <div class="date clearfix" id="weaDate">
+                            <span id="gregorian">${nongli}</span>
+                            <span id="lunar">${yangli}</span>
+                            <span class="future-7"><a href="javascript:;">未来七天天气</a></span>
+                            <span style="color: saddlebrown;font-weight: bold">特别感谢3(liu)6(mang)0的天气API</span>
+                            <span class="set-btn" id="changeCity"><a href="javascript:;"  onclick="alert('正在开发中。。。')">设置</a></span>
+                        </div>
+                        <div class="recently-day" id="recentlyDay">
+                        </div>
+                    </div>
+                    <div class="city-select">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="myresume" id="myresume">
+            <a href="/api">JS速查</a>
+            <a href="/">我的简历</a>
+        </div>
+    </header>
+    <div class="wrapper clearfix">
+        <section class="banner" style="opacity: 0.8">
+            <div class="mylogo" id="mylogo">
+                <img src="../images/super_small.jpg" alt="" class="front">
+                <img src="../images/power.jpg" alt="" class="back">
+            </div>
+        </section>
+        <section class="">
+        </section>
+        <section class="product-wrapper">
+            <div class="innner-wapper clearfix">
+                <ul class="product-list" id="products">
+                    <li data-col="c1">
+                        <div id="myinfo" class="pro-item">
+                            <a href="javascript:;" class="pic"><img src="../products/images/dog9.jpg" alt=""></a>
+                            <div class="name">正在添加中.....</div>
+                            <div class="time">2015-12</div>
+                        </div>
+                        <div class="pro-item" style="">
+                            <a href="javascript:;" class="pic"><img src="../images/product_2.jpg" alt=""></a>
+                            <div class="name">正在添加中.....</div>
+                            <div class="time">2015-12</div>
+                        </div>
+                    </li>
+                    <li data-col="c2">
+                        <div class="pro-item" style="">
+                            <a href="../products/css3Loadingstyle.html" class="pic" target="_blank"><img src="../products/images/css_loadiing_small.png" alt="css3 Loding"></a>
+                            <div class="name">纯CSS实现各种loading</div>
+                            <div class="time">2015-12</div>
+                        </div>
+                        <div class="pro-item" style="">
+                            <a href="../products/360weather.html" class="pic" target="_blank"><img src="../products/images/weather.jpg" alt=""></a>
+                            <div class="name">天气预报(jsonp获取数据)</div>
+                            <div class="time">2016-1</div>
+                        </div>
+                        <div class="pro-item" style="">
+                            <a href="../products/changePos.html" class="pic" target="_blank"><img src="../products/images/dog9.jpg" alt=""></a>
+                            <div class="name">萌蠢大互换(原生JS)</div>
+                            <div class="time">2015-10</div>
+                        </div>
+                    </li>
+                    <li data-col="c3">
+                        
+                        <div class="pro-item" style="">
+                            <a href="../products/phone_screen_clock.html" class="pic" target="_blank"><img src="../products/images/shoujilock.jpg" alt=""></a>
+                            <div class="name">模拟手机解锁(H5)</div>
+                            <div class="time">2016-2</div>
+                        </div>
+                        <div class="pro-item" style="">
+                            <a href="javascript:;" class="pic"><img src="../images/product_2.jpg" alt=""></a>
+                            <div class="name">正在添加中.....</div>
+                            <div class="time">2015-12</div>
+                        </div>
+                    </li>
+                    <li data-col="c4">
+                        <div class="pro-item" style="">
+                            <a href="javascript:;" class="pic"><img src="../images/product_2.jpg" alt=""></a>
+                            <div class="name">正在添加中.....</div>
+                            <div class="time">2015-12</div>
+                        </div>
+                        <div class="pro-item" style="">
+                            <a href="../products/css3Loadingstyle.html" class="pic"><img src="../products/images/css_loadiing_small.png" alt="css3 Loding" target="_blank"></a>
+                            <div class="name">纯CSS实现各种loading</div>
+                            <div class="time">2015-12</div>
+                        </div>
+                        
+                    </li>
+                    <li data-col="c4">
+                        <div class="pro-item" style="">
+                            <a href="../products/hover_cross.html" class="pic" target="_blank"><img src="../products/images/dog4.jpg
+                            " alt=""></a>
+                            <div class="name">鼠标移入边框交叉效果</div>
+                            <div class="time">2015-12</div>
+                        </div>
+                        <div class="pro-item" style="">
+                            <a href="../products/mofang.html" class="pic" target="_blank"><img src="../products/images/mofang.jpg" alt=""></a>
+                            <div class="name">魔方(CSS3)</div>
+                            <div class="time">2016-1</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section>
+        </section>
+    </div>
+    <footer class="footer clearfix">
+        <ul>
+            <li>
+                <h3 class="title">前端</h3>
+                <p class="description">
+                    本站所有内容都由本人制作，放在此处分享给大家，供学习、参考。
+                    <br/> 有任何疑问可以QQ联系我，大家一起学习共同进步。
+                </p>
+            </li>
+            <li>
+                <h3 class="title">友情链接</h3>
+                <ul class="friendly">
+                    <li><a href="https://developer.mozilla.org" target="_blank">MDN</a></li>
+                    <li><a href="http://huaban.com/" target="_blank">花瓣</a></li>
+                    <li><a href="http://tool.oschina.net/" target="_blank">在线工具-开源中国社区</a></li>
+                </ul>
+            </li>
+            <li>
+                <h3 class="title">感谢</h3>
+                <ul class="thanks">
+                    <li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
+                    <li><a href="https://github.com/twbs/bootstrap" target="_blank">Bootstrap</a></li>
+                    <li><a href="http://glyphicons.com/" target="_blank">Glyphicons </a></li>
+                </ul>
+            </li>
+            <li>
+                <p class="title">交流</p>
+                <p class="QQ">QQ：57682575</p>
+                <p class="github"><a href="https://github.com/dmwin72015/myresume" target="_blank">GitHub：dmwin72015</a></p>
+            </li>
+        </ul>
+        <p class="copyright">
+            copyright&nbsp;&copy;2016&nbsp;DongMin &nbsp;All rights reserved.
+        </p>
+    </footer>
+    <div class="" id="toTop">
+        <span class="arrow">∧</span>
+        <span class="text">回到顶部</span>
+    </div>
+</body>
+
+</html>

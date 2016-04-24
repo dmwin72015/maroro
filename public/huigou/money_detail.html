@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta HTTP-EQUIV="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>交易额结算记录-详细页面</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.css"/>
+    <link rel="stylesheet" href="css/datatable.huigou.css"/>
+</head>
+
+<body class="grey">
+    <div class="head">
+        <div class="head_box user clearfix">
+            <div class="inner">
+                <a href="javascript:;" class="logo">
+                    <img src="images/logo.jpg" alt="亿友会">
+                    <span>亿友会·公众平台</span>
+                </a>
+                <div class="account">
+                    <div class="user_logo">
+                        <a href="">
+                            <img src="images/logo.jpg" alt="">
+                        </a>
+                    </div>
+                    <div class="account_info">
+                        <p class="user_type">
+                            <a href="" class="user_icon service"></a>
+                            <a href="" class="user_icon verify"></a>
+                        </p>
+                        <p class="user_name">
+                            亿友会
+                            <span class="notices">
+                                1
+                                <span class="notices_left"></span>
+                            <span class="notices_right"></span>
+                            </span>
+                            <span class="login_out"><a href=""   id="login_out">退出</a></span>
+                        </p>
+                        <div class="notices_detail_box disN" id="notices_detail_box">
+                            <ul class="notices_msg_list">
+                                <li>
+                                    <i class="icon_dot">●</i>
+                                    <a href="">
+                                        提示信息提示嘻嘻提示新
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="icon_dot">●</i>
+                                    <a href="">
+                                        提示信息提示嘻嘻提示新
+                                    </a>
+                                </li>
+                                <li>
+                                    <i class="icon_dot">●</i>
+                                    <a href="">
+                                        提示信息提示嘻嘻提示新
+                                    </a>
+                                </li>
+                            </ul>
+                            <i class="notices_msg_arrow out"></i>
+                            <i class="notices_msg_arrow in"></i>
+                            <i class="notices_msg_close" id="notices_msg_close"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="container_box cell_layout">
+            <div class="col_side">
+                <div class="menu_box" id="menuBar">
+                    <dl class="menu first">
+                        <dt class="menu_title">
+                            <i class="icon_menu"></i>APP管理
+                        </dt>
+                        <dd>功能子菜单1</dd>
+                        <dd class="active">功能子菜单2</dd>
+                        <dd>功能子菜单3</dd>
+                        <dd>功能子菜单4</dd>
+                        <dd>功能子菜单5</dd>
+                        <dd class="menu_plugins">
+                            <a href="" id="add_plugin">
+                                添加功能插件
+                            </a>
+                        </dd>
+                    </dl>
+                    <dl class="menu">
+                        <dt class="menu_title">
+                            <i class="icon_menu"></i>结算
+                        </dt>
+                        <dd>用户结算记录</dd>
+                        <dd class="selected">交易额结算记录</dd>
+                    </dl>
+                    <dl class="menu">
+                        <dt class="menu_title">
+                            <i class="icon_menu"></i>功能
+                        </dt>
+                        <dd>功能子菜单1</dd>
+                        <dd class="active">功能子菜单2</dd>
+                        <dd>功能子菜单3</dd>
+                        <dd>功能子菜单4</dd>
+                        <dd>功能子菜单5</dd>
+                    </dl>
+                </div>
+                <div class="faq">
+                    <ul class="links">
+                        <li class="links_item"><a href="" target="_blank">客服中心</a></li>
+                        <li class="links_item"><a href="" target="_blank">侵权投诉</a></li>
+                    </ul>
+                    <p class="tail">反馈官号wabcdefasd</p>
+                </div>
+            </div>
+            <div class="col_main ">
+                <div class="main_head disN">
+                    <h3>结算管理</h3>
+                    <div class="title_tab" id="menu_son_tab">
+                        <ul>
+                            <li><a href="">用户结算记录</a></li>
+                            <li><a href="">交易额结算记录</a></li>
+                        </ul>
+                        <p class="tab_line">
+                            <span id="bot_line" style="left:0px;width: 132px;"></span>
+                        </p>
+                    </div>
+                </div>
+                <div class="show_info_table jiesuan">
+                    <div class="detail_table_box">
+                        <table class="display" cellspacing="0" id="mydataTable">
+                            <thead>
+                                <tr class="table_row">
+                                    <th>注册用户</th>
+                                    <th>推广人</th>
+                                    <th>交易金额</th>
+                                    <th>时间</th>
+                                </tr>
+                            </thead>
+                            <!--<tbody>-->
+                                 <!--<tr class="table_row">-->
+                                    <!--<td>15001381388</td>-->
+                                    <!--<td>15001381388</td>-->
+                                    <!--<td>103.34元</td>-->
+                                    <!--<td>2015-12-12</td>-->
+                                <!--</tr>-->
+
+                            <!--</tbody>-->
+                        </table>
+                    </div>
+                </div>
+                <div class="page_wrap disN">
+                    <span class="page_nav_area">
+                        <a href="javascript:void(0);" class="btn page_first" style="display: none;"></a>
+                        <a href="javascript:void(0);" class="btn page_prev"><i class="arrow"></i></a>
+                        <span class="page_num">
+                            <label>4</label>
+                            <span class="num_gap">/</span>
+                    <label>6</label>
+                    </span>
+                    <a href="javascript:void(0);" class="btn page_next"><i class="arrow"></i></a>
+                    <a href="javascript:void(0);" class="btn page_last" style="display: none;"></a>
+                    </span>
+                    <span class="goto_area">
+                        <input type="text">
+                        <a href="javascript:void(0);" class="btn page_go">跳转</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="faq"></div>
+    </div>
+    <div class="foot">
+        <ul class="link_list">
+            <li><a href="##">底部链接</a></li>
+            <li><a href="##">底部链接</a></li>
+            <li><a href="##">底部链接</a></li>
+            <li><a href="##">底部链接</a></li>
+            <li><a href="##">北京亿友会有限责任公司   京备 10003499 版本所有   Copyright © 2015-2016 . All Rights Reserved</a></li>
+        </ul>
+    </div>
+    <script src="js/sea.js"></script>
+    <script>
+        seajs.use('index')
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+@charset "utf-8";
+body {
+    /*background-color: #e6f4ff;*/
+    /*background: url("../images/weather_bg.png");*/
+    /*background:url("http://s.cn.bing.net/az/hprichbg/rb/GlobeSculpture_ZH-CN14987283809_1920x1080.jpg") no-repeat center ;*/
+    /*background-size: cover;*/
+    background: #cde5e8;
+}
+.box-body{
+    background: #fafafa !important;
+}
+.box-primary .box-body{
+    background: #fff;
+}
+.box-body.cuurentWeather,.box-body.temp-line{
+    padding:5px;
+    position: relative;
+}
+#province,#city,#town{
+    min-width:82px ;
+}
+.header {
+    text-align: center;
+    padding: 10px 0;
+}
+.address > li {
+    padding: 5px;
+    float: left;
+    font-size: 18px;
+    margin-bottom:10px;
+    padding-left:0;
+}
+
+.province-list,.city-list,.town-list {
+    padding: 8px 0 8px 8px;
+    min-width: 290px;
+}
+
+.province-list > span, .city-list>span,.town-list>span {
+    display: inline-block;
+    font-size: 14px;
+    padding: 5px 10px;
+    float: left;
+    border: 1px solid #eee;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.province-list > span:hover,
+.city-list > span:hover,
+.town-list>span:hover{
+    background-color: #eee;
+}
+
+.province-list > span.on,
+.city-list > span.on,
+.town-list>span.on{
+    border-color: #4889ff;
+    background-color: #4889ff;
+    color: #fff;
+}
+.current-Weather {
+    position: relative;
+    padding:25px;
+    height:100%;
+}
+
+.time {
+    position: absolute;
+    padding:3px;
+    top:0;
+    right:0;
+    line-height: 26px;
+    background-color:#eee;
+    color:red;
+    font-weight: bold;
+}
+
+.thermometer{
+    position: relative;
+    height:227px;
+    width:260px;
+}
+.thermometer .ther-pipe{
+    position: absolute;
+    left:20px;
+    bottom:25px;
+    width: 20px;
+    height:200px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    background-color: #D4E3EB;
+    padding-top:1px;
+}
+.thermometer .ther-pipe:after{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 50px;
+    height:50px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    background-color: inherit;
+    bottom:-25px;
+    left:50%;
+    margin-left:-25px;
+}
+.thermometer .ther-ball{
+    position: absolute;
+    left:25px;
+    bottom:25px;
+    width:10px;
+    height:0px;
+    -webkit-border-radius:8px;
+    -moz-border-radius:8px;
+    border-radius:8px;
+    background-color: #F07216;
+    transition:height 1s ease-in;
+}
+.thermometer .ther-ball:after{
+    position: absolute;
+    content: "";
+    width:30px;
+    height:30px;
+    background-color: inherit;
+    border-radius: 50%;
+    bottom:-15px;
+    left:50%;
+    margin-left:-15px;
+}
+.thermometer .ther-scale{
+    position: absolute;
+    top:20px;
+    left:45px;
+    width:20px;
+}
+.thermometer .ther-scale:after{
+    position: absolute;
+    content: '℃';
+    font-size: 24px;
+    font-weight:bold;
+    top:-20px;
+    left:20px;
+}
+.thermometer .ther-scale>ul>li{
+    padding:5px 0;
+    text-align: right;
+}
+.thermometer .currentTemperature{
+    position: absolute;
+    bottom:-15px;
+    left:100px;
+    color: #333;
+    font-size: 0;
+    display: table;
+}
+.currentTemperature .num{
+    display: table-cell;
+    font-size: 80px;
+}
+.currentTemperature .Symbol{
+    display: table-cell;
+    font-size:50px;
+}
+.pm25{
+    position: absolute;
+    left:150px;
+    top:10px;
+    padding:5px;
+    font-size: 16px;
+    font-weight:bold;
+    color:#fff;
+    background: #8f08bb;
+}
+#hours_temp{
+    padding:3px;
+    height:227px;
+}
+.future_5Day>ul>li{
+    float:left;
+}
+.future_5Day>ul>li{
+    margin-left: 10px;
+}
+.everyday{
+    width:176px;
+    text-align: center;
+    border:1px solid #efefef;
+    height:100%;
+}
+.everyday>h3{
+    text-align: center;
+    padding:3px 0;
+}
+.big-icon{
+    width:80px;
+    height:80px;
+    margin:8px auto;
+    background: url(../images/wea80.png);
+}
+.summary{
+    height:36px;
+}
+.temp{
+    color:#7f7f7f;
+}
+.temp>span{
+    font-size:34px;
+}
+.temp>em{
+    font-size:28px;
+}
+.sky{
+    height:30px;
+}

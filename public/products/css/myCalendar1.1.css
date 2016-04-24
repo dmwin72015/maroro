@@ -1,0 +1,47 @@
+/**
+* author:dongmin;
+* 2015-10-31
+* version 1.1
+**/
+@charset='utf-8';
+input[type=text] { position: relative; }
+a { text-decoration: none; }
+.caleWapper { font-family: Arial, Helvetica, sans-serif; font-size: 14px; position: absolute; z-index: 9999; top: 40px; left: 10px; /*width: 324px;*/ width: 227px; height: 260px; border: 2px solid #aaa; border-radius: 3px;background-color:#eee; }
+.dm_datetime_area { width: 100%; height: 228px; background:; }
+/***显示日期区域***/
+/*日期显示块*/
+.dm_date_sec { float: left; position: relative; width: 211px; margin-left: 8px; }
+.date_cale_box { position: relative; width: 211px; height: 198px; overflow: hidden; }
+.date_cale_box>span { position: absolute; border: 1px solid #999; }
+.date_cale_box>span.day { background: #FBFBEA; padding: 4px 4px 3px 0; text-align: right; line-height: 20px; }
+.date_cale_box>span.day.current { background: #61ADED; font-weight: 700; }
+.date_cale_box>span.empty { background: #dfdfdf; padding: 4px 4px 3px 0; }
+.date_cale_box>span.week { background: #DDF3FF; font-weight: 700; text-align: center; line-height: 20px; width: 29px; height: 27px; padding: 0; line-height: 27px; }
+.date_cale_box>span.month, .date_cale_box>span.year { border: 1px solid #999; text-align: center; line-height: 54.33px; font-size: 16px }
+.date_cale_box>span.day:hover, .date_cale_box>span.month:hover, .date_cale_box>span.year:hover { background: #DDF3FF; font-weight: 700; cursor: pointer; }
+.dm_date_btn { position: absolute; display: inline-block; width: 0px; height: 0px; vertical-align: middle; border-width: 6px; border-color: transparent; border-style: solid; }
+.pres { border-right-color: #888; left: -6px; top: 8px; }
+.pres:hover { border-right-color: #333; cursor: pointer; }
+.next { border-left-color: #888; right: -6px; top: 8px; }
+.next:hover { border-left-color: #333; cursor: pointer; }
+.date_btn_box { position: relative; height: 30px; font-size: 0; text-align: center; }
+.dm_date_txt { text-align: center; height: 30px; line-height: 30px; font-size: 14px; display: inline-block; vertical-align: middle; cursor: pointer; font-weight: 700; }
+.t_month { width: 80px; }
+.t_year { width: 80px; }
+
+/*时间显示块*/
+.dm_time_sec { float: left; position: relative; width: 95px; margin-left: 8px; }
+.dm_time_box { overflow: auto; height: 167px; position: relative; border: 1px solid #999; }
+.dm_time_box>span { display: block; width: 75px; height: 25px; line-height: 25px; text-align: center; font-size: 16px; color: #000; background: #efefef; border-bottom: 1px solid #999; border-right: 1px solid #999; }
+.dm_time_box>span:last-child { border-bottom: 0 }
+.dm_time_box>span:hover { background: #F5AA22; cursor: pointer; }
+.dm_time_box>span.current { background: #61ADED; }
+.dm_time_btn { width: 100%; height: 30px; display: block; }
+.up { }
+.down { }
+
+/*按钮功能区域*/
+.dm_bottom_area { width: 100%; height: 30px; text-align: center; padding-top: 3px; }
+.dm_bottom_area .botBtn { display: inline-block; cursor: pointer; border-radius: 5px; box-shadow: 0 0 3px 1px #567 inset; }
+.botBtn:hover { box-shadow: 0 0 3px 2px #789 inset; }
+.today { width: 68px; height: 26px; text-align: center; line-height: 26px; }

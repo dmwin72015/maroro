@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta contextmenu="">
+    <meta http-equiv="CONTENT-TYPE" content="text/html;charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no,email=no"/>
+    <!--开启对wepapp程序的支持,(Apple专用)-->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <!--改变顶部状态条的颜色;默认值为 default（白色），可以定为 black（黑色）和 black-translucent（灰色半透明）；-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-touch-fullscreen" content="yes">
+    <title>城市2级联动</title>
+    <link rel="stylesheet" href="../css/app/reset.css">
+    <link rel="stylesheet" href="../css/app/app_main.css">
+    <script src="../js/tools/zepto.min.js"></script>
+    <script>
+        (function (root, doc) {
+            var rect = doc.documentElement.getBoundingClientRect(), w = rect.width || rect.right - rect.left;
+            addEventListener('resize', setFont);
+            addEventListener('onload', setFont);
+            doc.addEventListener('DOMContentLoaded', setFont);
+            function setFont() {
+                document.documentElement.style.fontSize = (w > 750 ? 750 : w) / 16 + 'px';
+            }
+
+            console.log('a');
+        }(window, document));
+        $(function(){
+            $('.level ul').on({
+                'touchstart':function () {
+
+                },
+                'touchmove':function () {
+
+                },
+                'touchend':function () {
+                    
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div class="filter fix"></div>
+
+<div class="wrap middle city-info-wrap" style="width:300px">
+    <div class="city_title">
+        <h3>选择城市</h3>
+    </div>
+    <div class="city_content_box">
+        <div class="level level-01">
+            <ul>
+                <li data-code="01">北京</li>
+                <li data-code="02">上海</li>
+                <li data-code="03">山西</li>
+                <li data-code="04">河北</li>
+                <li data-code="05">新疆</li>
+                <li data-code="01">北京</li>
+                <li data-code="02">上海</li>
+                <li data-code="03">山西</li>
+                <li data-code="04">河北</li>
+                <li data-code="05">新疆</li>
+                <li data-code="01">北京</li>
+                <li data-code="02">上海</li>
+                <li data-code="03">山西</li>
+                <li data-code="04">河北</li>
+                <li data-code="05">新疆</li>
+                <li data-code="01">北京</li>
+                <li data-code="02">上海</li>
+                <li data-code="03">山西</li>
+                <li data-code="04">河北</li>
+                <li data-code="05">新疆</li>
+            </ul>
+        </div>
+        <div class="level level-02">
+            <ul>
+                <li data-code="0101">海淀区</li>
+                <li data-code="0102">西城区</li>
+                <li data-code="0103">东城区</li>
+                <li data-code="0104">朝阳区</li>
+                <li data-code="0105">昌平区</li>
+                <li data-code="0101">海淀区</li>
+                <li data-code="0102">西城区</li>
+                <li data-code="0103">东城区</li>
+                <li data-code="0104">朝阳区</li>
+                <li data-code="0105">昌平区</li>
+                <li data-code="0101">海淀区</li>
+                <li data-code="0102">西城区</li>
+                <li data-code="0103">东城区</li>
+                <li data-code="0104">朝阳区</li>
+                <li data-code="0105">昌平区</li>
+                <li data-code="0101">海淀区</li>
+                <li data-code="0102">西城区</li>
+                <li data-code="0103">东城区</li>
+                <li data-code="0104">朝阳区</li>
+                <li data-code="0105">昌平区</li>
+            </ul>
+        </div>
+    </div>
+    <div class="focus"></div>
+</div>
+
+</body>
+</html>

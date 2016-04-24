@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>董敏-冲向前端-简历</title>
+    <meta name="keywords" content="web前端,JS,jQuery,web前端个人简历,前端开发" />
+    <meta name="description" content="董敏的web前端工程师个人简历">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/myresume_new.css">
+    <script src="../js/jquery-1.11.0.min.js"></script>
+</head>
+
+<body class="my-theme">
+    <div class="preload"></div>
+    <div class="bg">
+        <div class="page-bg bg2" id="page-bg"></div>
+        <div class="page-bg filter"></div>
+    </div>
+    <header class="sidebar top-fix">
+        <a href="../resume/myweb.html" class="myWebsite" onclick="">
+            个人网站
+        </a>
+        <div class="barfunMenuBox clearfix">
+            <div class="weatherBox disN" id="weather">
+                <span class="city-name"></span>
+                <span class="weather-icon"></span>
+                <span class="temp-number"></span>
+            </div>
+            <div class="otherBox">
+                <a href="javascript:;" id="changeSkin">换肤</a>
+            </div>
+        </div>
+        <div class="bgImgBox">
+            <div class="bgImginnerwaper">
+                <ul class="bgImglist clearfix">
+                    <li data-page="bg1">
+                        <img src="../images/bg1.jpg" alt="">
+                        <span class="select"></span>
+                    </li>
+                    <li class="select" data-page="bg2">
+                        <img src="../images/bg2.png" alt="">
+                        <span></span>
+                    </li>
+                    <li data-page="bg1">
+                        <img src="http://s.cn.bing.net/az/hprichbg/rb/PineWarbler_ZH-CN8925328026_1920x1080.jpg" alt="">
+                        <span></span>
+                    </li>
+                    <li data-page="bg2">
+                        <img src="http://s.cn.bing.net/az/hprichbg/rb/DragonHeadsRaising_ZH-CN9424180768_1920x1080.jpg" alt="">
+                        <span></span>
+                    </li>
+                    <li data-page="bg1">
+                        <img src="http://s.cn.bing.net/az/hprichbg/rb/IzmirFaceWall_ZH-CN8661261728_1920x1080.jpg" alt="">
+                        <span></span>
+                    </li>
+                    <li data-page="bg2">
+                        <img src="http://s.cn.bing.net/az/hprichbg/rb/CapeSebastian_ZH-CN9469145123_1920x1080.jpg" alt="">
+                        <span></span>
+                    </li>
+                    <li data-page="bg1">
+                        <img src="http://s.cn.bing.net/az/hprichbg/rb/FireEscapes_ZH-CN9251582421_1920x1080.jpg" alt="">
+                        <span></span>
+                    </li>
+                </ul>
+                <a href="javascript:;" class="left-arrow fa fa-angle-left" id="left-arrow"></a>
+                <a href="javascript:;" class="right-arrow fa fa-angle-right" id="right-arrow"></a>
+            </div>
+            <div class="change-direct-waper">
+                <span class="direct-up active" data-direct="up"></span>
+                <span class="direct-right" data-direct="right"></span>
+                <span class="direct-down" data-direct="down"></span>
+                <span class="direct-left" data-direct="left"></span>
+                <span class="direct-center" data-direct="center"></span>
+            </div>
+            <a href="javascript:;" class="close fa fa-close" id="closetop"></a>
+        </div>
+    </header>
+    <div class="main-wapper">
+        <section class="page" data-page="p0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-12 widget-profile">
+                        <div class="profile-img">
+                            <div class="image-head" id="myhead">
+                                <a href="http://www.maroro.red"><img src="../images/my.jpg" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="profile-txt">
+                            <div class="profile_pname">
+                                <h1 class="pname">董敏</h1>
+                                <h4 class="pline">JS PROGRAMMER</h4>
+                                <h6>
+                                    <span class="fa fa-map-marker"></span>
+                                    北京 昌平区 回龙观
+                                </h6>
+                            </div>
+                            <div class="profile_pdesc">
+                                <!--<p>人的一生中至少要有两次冲动，一次为奋不顾身的爱情，一次为说走就走的旅行。</p>
+                                <p> — 安迪 安德鲁斯&nbsp;&nbsp;</p>
+                                <p>《上得天堂，下得地狱》</p>-->
+                                <p style="padding-left:15px">写光JavaSript代码，<br/>让别人无代码可写。</p>
+                                <p> — DM&nbsp;&nbsp;</p>
+                                <p>《前端思密达》</p>
+                            </div>
+                            <div class="profile_psocial clearfix">
+                                <ul class="psocial-list">
+                                    <li><a href="javascript:;"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-qq"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-wechat"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fa fa-weibo"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-xs-12  pers-tabs-container">
+                        <div class="clearfix">
+                            <ul class="pers-tabs-list" id="tabs-list">
+                                <li class="tab-personinfo pers-tabs-active" data-content="profileinfo">
+                                    <span class="tabs-title-list ">个人</span>
+                                    <i class="fa fa-user icon_menu icon_menu_active"></i>
+                                </li>
+                                <li class="tab-resumelist" data-content="jobresume">
+                                    <span class="tabs-title-list">简历</span>
+                                    <i class="fa fa-briefcase icon_menu"></i>
+                                </li>
+                                <li class="tab-project" data-content="product">
+                                    <span class="tabs-title-list">项目</span>
+                                    <i class="fa fa-tasks icon_menu"></i>
+                                </li>
+                                <li class="tab-product" data-content="project">
+                                    <span class="tabs-title-list">作品</span>
+                                    <i class="fa fa-bullhorn icon_menu "></i>
+                                </li>
+                                <li class="tab-product" data-content="saytome">
+                                    <span class="tabs-title-list">留言</span>
+                                    <i class="fa fa-send-o icon_menu "></i>
+                                </li>
+                            </ul>
+                            <div class="tabs-content-container">
+                                <div class="content-inner-container">
+                                    <div class="contentBox content-personinfo " id="profileinfo">
+                                        <h1 class="content-title">我是谁</h1>
+                                        <div class="row ">
+                                            <div class="col-md-6 profile_l">
+                                                <div class="sec-title person-title">
+                                                    <p class="sec-title-text">董敏</p>
+                                                </div>
+                                                <div class="person-about">
+                                                    <ul>
+                                                        <li>
+                                                            <i class="glyphicon glyphicon-user"></i>
+                                                            <label>Name</label>
+                                                            <span class="value">董敏</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="glyphicon glyphicon-calendar"></i>
+                                                            <label>BirthDay</label>
+                                                            <span class="value"> 1988/10/18</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="glyphicon glyphicon-map-marker"></i>
+                                                            <label>Address</label>
+                                                            <span class="value">北京，回龙观</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="glyphicon glyphicon-envelope"></i>
+                                                            <label>E-mail</label>
+                                                            <span class="value">dong2013job@163.com</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="glyphicon glyphicon-phone"></i>
+                                                            <label>Phone</label>
+                                                            <span class="value">188-0127-6473</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="glyphicon glyphicon-home"></i>
+                                                            <label>Home</label>
+                                                            <span class="value">山西，大同</span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="glyphicon glyphicon-globe"></i>
+                                                            <label>Website</label>
+                                                            <span class="value"><a href="http://www.maroro.red" target="_blank">www.maroro.red</a></span>
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-github" style="font-size: 16px;"></i>
+                                                            <label>GitHub</label>
+                                                            <span class="value"><a href="https://github.com/dmwin72015/myresume" target="_blank" title="https://github.com/dmwin72015/myresume">https://github.com/dmw...</a></span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <p class="wordbox">
+                                                    <img src="../images/word_h.png" alt="">
+                                                    <img src="../images/word_e.png" alt="">
+                                                    <img src="../images/word_l.png" alt="">
+                                                    <img src="../images/word_l.png" alt="">
+                                                    <img src="../images/word_o.png" alt="">
+                                                </p>
+                                                <p class="wordbox">
+                                                    <img src="../images/word_j.png" alt="">
+                                                    <img src="../images/word_s.png" alt="">
+                                                </p>
+                                            </div>
+                                            <div class="col-md-6 profile_r">
+                                                <div class="cycle-slideshow clearfix " id="cycleImg">
+                                                    <img src="../images/personinfo_r_1.jpg" alt="" style="opacity: 1">
+                                                    <img src="../images/personinfo_r_2.jpg" alt="">
+                                                    <img src="../images/personinfo_r_3.jpg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contentBox content-resumelist disN" id="jobresume">
+                                        <h1 class="content-title">轨迹&技能</h1>
+                                        <div class="row ">
+                                            <div class="col-md-6">
+                                                <div class="sec-title">
+                                                    <p class="sec-title-text">技能</p>
+                                                </div>
+                                                <div class="workskills">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="progressbar skill">
+                                                                <div class="progressbar-title">
+                                                                    <span>HTML</span>
+                                                                </div>
+                                                                <div class="progressbar-bar" style="width:70%"></div>
+                                                                <div class="progressbar-txt"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="progressbar skill">
+                                                                <div class="progressbar-title">
+                                                                    <span>CSS</span>
+                                                                </div>
+                                                                <div class="progressbar-bar" style="width:70%"></div>
+                                                                <div class="progressbar-txt"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="progressbar skill">
+                                                                <div class="progressbar-title">
+                                                                    <span>JavaScript</span>
+                                                                </div>
+                                                                <div class="progressbar-bar" style="width:95%"></div>
+                                                                <div class="progressbar-txt"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="progressbar skill">
+                                                                <div class="progressbar-title">
+                                                                    <span>PS</span>
+                                                                </div>
+                                                                <div class="progressbar-bar" style="width:20%"></div>
+                                                                <div class="progressbar-txt"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="progressbar skill">
+                                                                <div class="progressbar-title">
+                                                                    <span>PHP/JAVA</span>
+                                                                </div>
+                                                                <div class="progressbar-bar" style="width:15%"></div>
+                                                                <div class="progressbar-txt"></div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="progressbar skill">
+                                                                <div class="progressbar-title">
+                                                                    <span>MySql</span>
+                                                                </div>
+                                                                <div class="progressbar-bar" style="width:15%"></div>
+                                                                <div class="progressbar-txt"></div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="sec-title jslib-title">
+                                                    <p class="sec-title-text">使用中</p>
+                                                </div>
+                                                <div class="jslib">
+                                                    <a href="https://jquery.com/" target="_blank">
+                                                        <img src="../images/jquery_logo.png" alt="jQuery">
+                                                    </a>
+                                                    <a href="https://github.com/twbs/bootstrap" target="_blank">
+                                                        <img src="../images/bootstrap_logo.png" alt="bootstrap">
+                                                    </a>
+                                                </div>
+                                                <div class="sec-title jslib-title">
+                                                    <p class="sec-title-text">学习中</p>
+                                                </div>
+                                                <div class="jslib">
+                                                    <a href="https://github.com/twbs/bootstrap" target="_blank">
+                                                        <img src="../images/angular_logo.png" alt="angular">
+                                                    </a>
+                                                    <a href="https://github.com/twbs/bootstrap" target="_blank">
+                                                        <img src="../images/nodejs_logo.png" alt="nodeJs">
+                                                    </a>
+                                                    <a href="http://seajs.org/" target="_blank">
+                                                        <img src="../images/seajs_logo.png" alt="seaJs">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 profile_r  ">
+                                                <div class="sec-title workExp-title">
+                                                    <p class="sec-title-text">工作经历</p>
+                                                </div>
+                                                <ul class="workExp-list">
+                                                    <li>
+                                                        <h5>
+                                                            Web Developer
+                                                            <span class="workExp-duration">
+                                                                <i class="fa fa-calendar"></i>
+                                                                2015/3-2016/3
+                                                            </span>
+                                                        </h5>
+                                                        <h6>
+                                                            <span class="fa fa-briefcase">
+                                                                &nbsp;易宝电脑系统(北京)有限公司
+                                                            </span>
+                                                        </h6>
+                                                        <p class="workExp-desc text_cn">
+                                                            负责前台页面的修改，模版制作，页面动态效果实现。
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h5>
+                                                            JSP/Axure/Web Developer
+                                                            <span class="workExp-duration">
+                                                                <i class="fa fa-calendar"></i>
+                                                                2013/3-2015/3
+                                                            </span>
+                                                        </h5>
+                                                        <h6>
+                                                            <span class="fa fa-briefcase">
+                                                                &nbsp;华源格林科技有限公司
+                                                            </span>
+                                                        </h6>
+                                                        <p class="workExp-desc text_cn ">
+                                                            厌倦了后台的我，开始接触了一些设计工作，利用AxureRP设计网页原型，制作简单的页面、样式的修改、简单的动画效果。我的前端之路从此开始....
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                                <div class="sec-title eduExp-title">
+                                                    <p class="sec-title-text">教育经历</p>
+                                                </div>
+                                                <ul class="workExp-list">
+                                                    <li>
+                                                        <h5>
+                                                            计算机科学与技术
+                                                            <span class="workExp-duration">
+                                                                <i class="fa fa-calendar"></i>
+                                                                2008/9-2012/7
+                                                            </span>
+                                                        </h5>
+                                                        <h6>
+                                                            <span class="fa fa-book">
+                                                                &nbsp;天津理工大学中环信息学院(本科)
+                                                            </span>
+                                                        </h6>
+                                                        <p class="workExp-desc text_cn ">
+                                                            漫长的大学四年生活
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <h5>
+                                                            JAVA
+                                                            <span class="workExp-duration">
+                                                                <i class="fa fa-calendar"></i>
+                                                                2012/8-2012/12
+                                                            </span>
+                                                        </h5>
+                                                        <h6>
+                                                            <span class="fa fa-book">
+                                                                &nbsp;天津CSDN科技有限公司
+                                                            </span>
+                                                        </h6>
+                                                        <p class="workExp-desc text_cn">
+                                                            毕业之后JAVA深入学习
+                                                        </p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contentBox content-product disN" id="product">
+                                        <h1 class="content-title">小作品
+                                                <a class="more"href="myweb.html"></a>
+                                        </h1>
+                                        <div class="products-list">
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <div class="productItem-wapper">
+                                                        <a href="../products/clock.html">
+                                                            <img src="../images/clock.png" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="../products/clock.html">原生JS+CSS3 电子时钟</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="productItem-wapper">
+                                                        <a href="../products/yellowBoy.html">
+                                                            <img src="../images/yellowBoy.png" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="../products/yellowBoy.html">CSS3打造动态小黄人</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="productItem-wapper">
+                                                        <a href="../products/Calendar.html">
+                                                            <img src="../products/images/calendar.png" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="../products/Calendar.html">自己的jQuery日历插件</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="productItem-wapper">
+                                                        <a href="/products/shoufengqing.html">
+                                                            <img src="../images/houfengqing.png" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="javascript:;">原生JS手风琴效果</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="productItem-wapper">
+                                                        <a href="/products/radio.html">
+                                                            <img src="../images/radio.png" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="/products/radio.html">原生JS+CSS实现不同的复选单选框</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="productItem-wapper">
+                                                        <a href="/products/binglike.html">
+                                                            <img src="../images/binglike.jpg" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="/products/binglike.html">模仿bing导航添加菜单</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="productItem-wapper">
+                                                        <a href="\products\changePos.html">
+                                                            <img src="../products/images/dog9.jpg" height="300" width="212" alt="dog">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="\products\changePos.html">萌宠大互换(原生JS)</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="productItem-wapper">
+                                                        <a href="/products/magnifier.html">
+                                                            <img height="300" width="212" src="../images/magnifier.jpg" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="/products/magnifier.html">原生JS实现商城放大镜</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="productItem-wapper">
+                                                        <a href="javascript:;">
+                                                            <img src="../images/product_3.jpg" alt="">
+                                                        </a>
+                                                        <div class="product-label">
+                                                            <a href="javascript:;">++++++++++++</a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="contentBox content-project disN" id="project">
+                                        <h1 class="content-title">我做过</h1>
+                                        <div class="row">
+                                            <div class="col-md-3 .hidden-sm .hidden-xs">
+                                                <ul class="project-time-list">
+                                                    <p class="empty-title"></p>
+                                                    <li>
+                                                        <div class="pro-item">
+                                                            <p class="pro-name">中国农业银行网站</p>
+                                                            <p class="pro-time">2015/12 - 2016/2</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-item">
+                                                            <p class="pro-name">国家旅游局网站</p>
+                                                            <p class="pro-time">2015/10 - 20115/12</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-item">
+                                                            <p class="pro-name">中国社会科学网子网群</p>
+                                                            <p class="pro-time">2015/4 - 2015/10</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-item">
+                                                            <p class="pro-name">国家电网统计系统(内部)</p>
+                                                            <p class="pro-time">2014/2 - 2015/02</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-item">
+                                                            <p class="pro-name">国家电网客服中心系统(内部)</p>
+                                                            <p class="pro-time">2013/4 - 2014/2</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-item">
+                                                            <p class="Omission">........</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-2 .hidden-sm .hidden-xs" style="margin-top: -5px;">
+                                                <p class="pro-year">NOW</p>
+                                                <ul class="pro-month-list">
+                                                    <li>
+                                                        <div class="pro-month-line">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </div>
+                                                        <a class="pro-month-Txt" href="http://www.abchina.com/cn/" target="_blank">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-month-line">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </div>
+                                                        <a class="pro-month-Txt" href="http://www.cnta.gov.cn/" target="_blank">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-month-line">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </div>
+                                                        <a class="pro-month-Txt" href="http://www.cssn.cn/cssnzwdh/" target="_blank">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-month-line">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </div>
+                                                        <a class="pro-month-Txt" href="javascript:;">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-month-line">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </div>
+                                                        <a class="pro-month-Txt" href="javascript:;">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <div class="pro-month-line">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </div>
+                                                        <a class="pro-month-Txt" href="javascript:;">
+                                                            <span class="pro-bgmoving"></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-md-7 .col-sm-12">
+                                                <p class="empty-title"></p>
+                                                <ul class="pro-desc-list">
+                                                    <li>
+                                                        <p class="pro-desc-txt">
+                                                        负责模版的制作，页面上JS动画效果的实现。<br/>
+                                                        三级页面的切图，JS功能实现.
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="pro-desc-txt">
+                                                        首页导航鼠标移入、背景色运动效果实现。<br/>使用插件YAO.js实现首页轮播图功能.<br/>部分页面中HTML代码的修改
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="pro-desc-txt">
+                                                            社科网子网的旧网站的迁移，将TABLE布局全部更改为DIV布局<br/>
+                                                            重新改写原网站迁移后的JS功能
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="pro-desc-txt">
+                                                            参与到页面设计，JS脚本的完成。使用AxureRP绘制原型图.<br/>部分页面的切图。
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="pro-desc-txt">
+                                                            参与到二期、三期，前台JSP页面的修改，功能实现，根据需求修该页面，写一些简单的JS代码，使用ajax配合后台的交互
+                                                        </p>
+                                                    </li>
+                                                    <li>
+                                                        <p class="pro-desc-txt">更多内容敬请期待...</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="contentBox content-saythings disN" id="saytome">
+                                        <h1 class="content-title">对我说</h1>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <form action="/sendMessage/" class="form-saythings">
+                                                    <p>
+                                                        <textarea type="text" class="form-control textareaInput"></textarea>
+                                                    </p>
+                                                    <p>
+                                                        <label>您的尊姓大名</label>
+                                                        <input type="text" class="form-control vistor-name" placeholder="name...">
+                                                    </p>
+                                                    <p>
+                                                        <label>您的E-mail</label>
+                                                        <input type="text" class="form-control vistor-e-mail" placeholder="e-mail...">
+                                                    </p>
+                                                    <p>
+                                                        <input type="reset" value="CLEAR">
+                                                        <input type="submit" value="SEND" id="sendMsg" onclick="return false;">
+                                                    </p>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="scrollTools">
+                                    <div class="draggerContainer disN" id="draggerBar">
+                                        <div class="draggerbar"></div>
+                                        <div class="draggerBlock" id="barBlcok"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <script src="../js/photo_new.js"></script>
+</body>
+
+</html>

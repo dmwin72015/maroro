@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>模仿手机屏幕锁定</title>
+    <script type="text/javascript" src="../js/underscore-1.7.0.min.js"></script>
+    <style>
+    body,
+    ul,
+    p {
+        margin: 0;
+        padding: 0;
+        font-family: 'arial';
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    .wapper {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 10px 20px;
+        overflow: hidden;
+    }
+    
+    .left,
+    .right {
+        float: left;
+        height: 470px;
+        position: relative;
+    }
+    
+    .left {
+        width: 380px;
+        /* background-color: #305065; */
+        cursor: none;
+    }
+    
+    .right {
+        width: 500px;
+    }
+    .filter:hover {
+        cursor: pointer;
+    }
+    
+    .right {
+        margin-left: 15px;
+    }
+    
+    .btngroup {
+        padding-bottom: 10px;
+    }
+    
+    .schemalist {
+        /* overflow: hidden; */
+    }
+    
+    .schemalist li {
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .itemwaper {
+        width: 150px;
+        height: 200px;
+        background-color: #eee;
+    }
+    
+    .pic {
+        border: 3px solid transparent;
+        width: 144px;
+        height: 194px;
+    }
+    
+    .itemwaper.use .pic {
+        border-color: orange;
+    }
+    
+    .pic img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #screen {
+        /* background-color: #333; */
+    }
+    
+    .trail {
+        float: left;
+        width: 100px;
+    }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h5 style="text-align: center">默认情况下是新增解锁方案，新增完成了，进入解锁方案。</h5>
+    </div>
+    <div class="wapper">
+        <div class="left">
+            <canvas width="380" height="470" id="screen">
+                抱歉！你的浏览器无法使用此功能！！！
+            </canvas>
+            <!-- <div class="filter" id="">新增解锁方式</div> -->
+        </div>
+        <div class="right">
+            <p class="btngroup">
+                <!-- <input type="button" value="新增方案" id="createSchema"> -->
+                <input type="button" value="删除方案" id="deleteSchema">
+                <!-- <input type="button" value="删除所有" id="deleteAllSchema"> -->
+            </p>
+            <ul class="schemalist" id="schemalist">
+                <li data-num="0">
+                    <div class="itemwaper use">
+                        <div class="pic">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="trail" id="lujing">
+        </div>
+    </div>
+</body>
+<script>
+window.onload = function() {
+    var oLujin = document.getElementById('lujing');
+
+    function showLujing(arr1,arr2) {
+        var str = '<h5>保存方案：</h5>';
+        for (var x in arr1) {
+            str += '[' + arr1[x].x + ',' + arr1[x].y + ']<br/>';
+        }
+        str+="<h5>当前方案：</h5>";
+        for (var y in arr2) {
+            str += '[' + arr2[y].x + ',' + arr2[y].y + ']<br/>';
+        }
+        oLujin.innerHTML = str;
+    }
+    var oCan = document.getElementById('screen');
+    var oSchemalist = document.getElementById('schemalist');
+    if (!oCan.getContext) return;
+    var config = {
+        width: 380,
+        height: 470,
+        left: oCan.parentNode.offsetLeft,
+        top: oCan.parentNode.offsetTop,
+        circle_r: 30,
+        color: '#abcfff',
+        lineWidth: '3',
+        locat: [],
+        num: 3,
+    };
+    var trail = []; //路径
+    var schame = []; //方案
+    var status = '1'; //解锁方案  1 新增  0 解锁
+    var currentStyle = {
+        color: 'rgba(230,230,230,1)',
+        trail: trail
+    };
+    var ctx = oCan.getContext("2d");
+
+    function drag_circle(conf) { //初始化圆圈
+        ctx.beginPath();
+        ctx.fillStyle = '#1F4C75';
+        ctx.rect(0, 0, config.width, config.height);
+        ctx.fillRect(0, 0, config.width, config.height);
+        ctx.closePath();
+        var r = config.circle_r;
+        var num = config.num;
+        ctx.lineWidth = config.lineWidth;
+        ctx.strokeStyle = config.color;
+        for (var i = 0; i < num; i++) {
+            for (var j = 0; j < num; j++) {
+                ctx.beginPath();
+                var x = config.width / 3 * (i + 1 / 2),
+                    y = config.height / 3 * (j + 1 / 2);
+                ctx.arc(x, y, r, 0, 2 * Math.PI);
+                ctx.closePath();
+                ctx.stroke();
+                config.locat.push({
+                    x: x,
+                    y: y
+                });
+            }
+        }
+    }
+    drag_circle();
+
+    function drag_ruleLine() { //画格子线条
+        var num = config.num;
+        var width = config.width;
+        var height = config.height;
+        for (var i = 1; i < num; i++) {
+            ctx.beginPath();
+            ctx.strokeStyle = '#fff';
+            ctx.moveTo(width / 3 * i, 0);
+            ctx.lineTo(width / 3 * i, height);
+            ctx.closePath();
+            ctx.stroke();
+        }
+        for (var j = 1; j < num; j++) {
+            ctx.beginPath();
+            ctx.strokeStyle = '#fff';
+            ctx.moveTo(0, height / 3 * j);
+            ctx.lineTo(width, height / 3 * j);
+            ctx.closePath();
+            ctx.stroke();
+        }
+    }
+
+    function draw_Mousepoint(x, y, r) { //绘制鼠标位置的圆圈
+        ctx.beginPath();
+        ctx.arc(x, y, r, 0, 2 * Math.PI);
+        ctx.fillStyle = 'rgba(10,10,10,0.3)';
+        ctx.lineWidth = '0';
+        ctx.strokeStyle = 'rgba(200,200,200,0)';
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+    }
+
+    function draw_trailPoint(x, y, opt) { //绘制轨迹的点
+        ctx.beginPath();
+        ctx.arc(x, y, config.circle_r * 0.5, 0, 2 * Math.PI);
+        ctx.fillStyle = currentStyle.color || 'rgba(230,230,230,1)';
+        ctx.lineWidth = '0';
+        ctx.strokeStyle = 'rgba(200,200,200,0)';
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    function judgePos(x, y) { //返回碰到的圆圈圆心坐标
+        var locat = config.locat;
+        var r = config.circle_r;
+        for (var i = 0; i < locat.length; i++) {
+            if (x >= locat[i]['x'] - r && x <= locat[i]['x'] + r && y >= locat[i]['y'] - r && y <= locat[i]['y'] + r) {
+                // console.log('重叠.....');
+                return locat[i];
+            }
+        }
+        return !!0;
+    }
+
+    function drawLine(opt) { //绘制出轨迹
+        opt = currentStyle || {};
+        var arr = currentStyle.trail || trail;
+        ctx.beginPath();
+        for (var i = 0; i < arr.length; i++) {
+            ctx.lineWidth = "5";
+            ctx.strokeStyle = opt.color || 'rgba(230,230,230,1)';
+            ctx.moveTo(arr[i].x, arr[i].y);
+            if (i < arr.length - 1) {
+                ctx.lineTo(arr[i + 1].x, arr[i + 1].y);
+            }
+            ctx.stroke();
+            draw_trailPoint(arr[i].x, arr[i].y, opt);
+        }
+        ctx.closePath();
+    }
+
+    function init() { //主要方法
+        var locat = config.locat;
+        var r = config.circle_r;
+        var left = config.left;
+        var top = config.top;
+        var dragable = false; //是否开始绘制
+
+        oCan.onmousedown = function(ev) {
+            var oEv = ev || window.event;
+            oEv.preventDefault();
+            var x_in = oEv.clientX - left,
+                y_in = oEv.clientY - top;
+            var circlePos = judgePos(x_in, y_in);
+            if (circlePos) {
+                dragable = true;
+                trail.push({
+                    x: circlePos.x,
+                    y: circlePos.y
+                });
+            }
+        };
+        var lastX = 0,
+            lastY = 0, //上一次坐标
+            drawEnd = 0; //结束绘制 1 没有 0 结束
+        oCan.onmousemove = function(ev) {
+            var oEv = ev || window.event;
+            var x_in = oEv.clientX - left,
+                y_in = oEv.clientY - top;
+            ctx.beginPath();
+            ctx.clearRect(0, 0, 380, 470);
+            drag_circle(); //每次重新绘制九个圈
+            if (dragable) {
+                var circlePos = judgePos(x_in, y_in);
+                if (circlePos && trail.length > 0) {
+                    if (circlePos.x != trail[trail.length - 1].x || circlePos.y != trail[trail.length - 1].y) {
+                        //判断是否在当前圈内移动
+                        trail.push({
+                            x: circlePos.x,
+                            y: circlePos.y
+                        });
+                    }
+                }
+                drawLine();
+                lastX = oEv.clientX - left, lastY = oEv.clientY - top;
+            }
+            if (drawEnd) {
+                drawLine();
+            }
+            draw_Mousepoint(x_in, y_in, 15);
+        };
+        oCan.onmouseup = function() {
+            dragable = false;
+            if(trail.length<=1){
+                trail.length = 0; return;
+            }
+            if (status == '1') { //解锁方案  1 新增  0 解锁
+                schame.push({
+                    src: oCan.toDataURL("image/png"),
+                    trail: cloneArray(trail)
+                });
+                //清除画板重新绘制，消除鼠标圆点
+                ctx.clearRect(0, 0, 380, 470);
+                drag_circle();
+                drawLine({
+                    trail: trail
+                });
+                if (trail.length > 1) {
+                    status = '0';
+                    addCanvas(oCan);
+                }
+            } else {
+                drawEnd = 1;
+                ctx.clearRect(0, 0, 380, 470);
+                drag_circle();
+                var currTrail = cloneArray(trail);
+                var recordTrail = schame[0].trail; //匹配选中的解锁方式
+                if (_.isEqual(currTrail, recordTrail)) {
+                    currentStyle = {
+                        color: 'green',
+                        trail: currTrail
+                    }
+                } else {
+                    currentStyle = {
+                        color: 'red',
+                        trail: currTrail
+                    }
+                }
+                drawLine({
+                    trail: currTrail
+                });
+                console.log(recordTrail.length);
+                showLujing(recordTrail,currTrail);
+                alert(currentStyle.color == 'green'?'解锁成功':'解锁失败');
+                setTimeout(function() {
+                    currentStyle = {
+                        color: 'rgba(230,230,230,1)'
+                    }
+                    drawEnd = 0;
+                    ctx.clearRect(0, 0, 380, 470);
+                    drag_circle();
+                }, 20);
+            }
+            
+            trail.length = 0;
+            status = 0;
+        }
+        oCan.onmouseout = function() {
+            ctx.clearRect(0, 0, 380, 470);
+            drag_circle();
+            trail.length = 0;
+            dragable = 1;
+        }
+    }
+    init();
+
+    function cloneArray(arr) {
+        if (!Array.isArray(arr)) return;
+        if (Array.slice) return arr.slice();
+        var tmp = new Array();
+        for (var i = 0; i < arr.length; i++) {
+            tmp.push(arr[i]);
+        }
+        return tmp;
+    }
+
+    function addSchema(n) { //添加方案
+        var oUl = document.getElementById('schemalist');
+        var oLi = document.createElement('li');
+        oLi.innerHTML = '<div class="itemwaper use" data-num="' + n + '"><div class="pic"></div></div>';
+        oUl.appendChild(oLi);
+        var oLi_now = oUl.getElementsByTagName('li');
+        if (oLi_now.length > 1) {
+            var aClass = oLi_now[oLi_now.length - 2].getElementsByTagName('div')[0].classList;
+            aClass.remove('use');
+        }
+    }
+
+    function deleteSchema(n) { //删除方案
+        if (oSchemalist.children.length == 1) {
+            oSchemalist.children[0].innerHTML = '<div class="itemwaper use" data-num="1"><div class="pic"></div></div>';
+            return;
+        }
+        if (i == oSchemalist.children.length - 1) {
+            oSchemalist.removeChild(oSchemalist.children.length - 1);
+            return;
+        }
+        for (var i = 0; i < oSchemalist.children.length; i++) {
+            if (i > n - 1) {
+                oSchemalist.children[i].setAttribute('data-num', n - 1);
+            }
+        }
+        oSchemalist.removeChild(n - 1);
+    }
+
+    function addCanvas(canvas) { //添加方案
+        var oDiv = document.getElementsByClassName('itemwaper use')[0];
+        oDiv.innerHTML = '<div class="pic"><img src="' + canvas.toDataURL("image/png") + '"></img></div>';
+    }
+
+    //var createBtn = document.getElementById('createSchema');
+    var deleteBtn = document.getElementById('deleteSchema');
+    //var deleteAll = document.getElementById('deleteAllSchema');
+    /*
+    createBtn.onclick = function() {
+        var oDivwaper = document.getElementsByClassName('itemwaper');
+        var oDiv = document.getElementsByClassName('itemwaper use');
+        var img = oDiv[oDiv.length - 1].getElementsByTagName('div')[0].getElementsByTagName('img');
+        if (img.length <= 0) return;
+        if (schame.length > 5) {
+            alert('亲！只允许有5个方案哦！');
+            status = '0';
+        } else {
+            console.log('添加.....');
+            addSchema();
+            status = '1';
+        }
+    }
+    */
+    deleteBtn.onclick = function() {
+        deleteSchema(0);
+        status = '1';
+        oLujin.innerHTML ='';
+    };
+    /*
+    deleteAll.onclick = function() {
+        var oDiv = document.getElementsByClassName('itemwaper use');
+        if (!oDiv || oDiv.length == 1) return;
+        document.getElementById('schemalist').innerHTML = '';
+    };*/
+
+};
+</script>
+
+</html>
+<!-- <li>
+                    <div class="itemwaper use">
+                        <div class="pic" id="mycanvasimg">
+                        </div>
+                    </div>
+                </li> -->

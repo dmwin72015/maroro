@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/yellow.min.css">
+    <title>Yellow Boy</title>
+    <style>
+        @-webkit-keyframes airmoving2 {
+            from {  transform: rotate(20deg);}
+            to { transform: rotate(25deg); }
+        }
+        @-o-keyframes airmoving2 {
+            from {  transform: rotate(20deg)}
+            to { transform: rotate(25deg)}
+        }
+        @-moz-keyframes airmoving2 {
+            from {  transform: rotate(20deg)}
+            to { transform: rotate(25deg)}
+        }
+        @keyframes airmoving2 {
+            from {  transform: rotate(0deg)}
+            to { transform: rotate(25deg)}
+        }
+
+        @-webkit-keyframes airmoving1 {
+            from {  transform: rotate(0deg);}
+            to { transform: rotate(20deg); }
+        }
+        @-o-keyframes airmoving1 {
+            from {  transform: rotate(0deg)}
+            to { transform: rotate(20deg)}
+        }
+        @-moz-keyframes airmoving1 {
+            from {  transform: rotate(0deg)}
+            to { transform: rotate(20deg)}
+        }
+        @keyframes airmoving1 {
+            from {  transform: rotate(  0deg)}
+            to { transform: rotate(20deg)}
+        }
+        .hair2{
+            -webkit-animation: airmoving2 2s ease infinite alternate;
+            -o-animation: airmoving2 2s ease infinite alternate;
+            animation: airmoving2 2s ease infinite alternate;
+        }
+        .hair1{
+            transform-origin:left bottom;
+            -webkit-animation: airmoving1 2s ease infinite alternate;
+            -o-animation: airmoving1 2s ease infinite alternate;
+            animation: airmoving1 2s ease infinite alternate;
+        }
+        @-webkit-keyframes eyeballmoving1 {
+            from { 
+                margin-left:15.5px;
+                margin-top:14.5px;
+            }
+            to { 
+                margin-left:15.5px;
+                margin-top:14.5px; 
+            }
+        }
+        @-o-keyframes eyeballmoving1 {
+            from { 
+                margin-left:15.5px;
+                margin-top:14.5px;
+            }
+            to { 
+                margin-left:10.5px;
+                margin-top:28.5px; 
+            }
+        }
+        @-moz-keyframes eyeballmoving1 {
+            from { 
+                margin-left:15.5px;
+                margin-top:14.5px;
+            }
+            to { 
+                margin-left:10.5px;
+                margin-top:28.5px; 
+            }
+        }
+        @keyframes eyeballmoving1 {
+            from { 
+                margin-left:15.5px;
+                margin-top:14.5px;
+            }
+            to { 
+                margin-left:10.5px;
+                margin-top:28.5px; 
+            }
+        }
+
+        @-webkit-keyframes eyeballmoving2 {
+            from { 
+                left:35px;
+                top:35px;
+            }
+            to { 
+                left:20px;
+                top:45px; 
+            }
+        }
+        @-o-keyframes eyeballmoving2 {
+            from { 
+                left:35px;
+                top:35px;
+            }
+            to { 
+                left:20px;
+                top:45px; 
+            }
+        }
+        @-moz-keyframes eyeballmoving2 {
+            from { 
+                left:35px;
+                top:35px;
+            }
+            to { 
+                left:20px;
+                top:45px; 
+            }
+        }
+        @keyframes eyeballmoving2 {
+            from { 
+                left:35px;
+                top:35px;
+            }
+            to { 
+                left:20px;
+                top:45px; 
+            }
+        }
+        @-webkit-keyframes eyeballmoving3 {
+            from { 
+                right:45px;
+                top:35px;
+            }
+            to { 
+                right:55px;
+                top:45px; 
+            }
+        }
+        @-o-keyframes eyeballmoving3 {
+            from { 
+                right:45px;
+                top:35px;
+            }
+            to { 
+                right:55px;
+                top:45px; 
+            }
+        }
+        @-moz-keyframes eyeballmoving3 {
+            from { 
+                right:45px;
+                top:35px;
+            }
+            to { 
+                right:55px;
+                top:45px; 
+            }
+        }
+        @keyframes eyeballmoving3{
+            from { 
+                right:45px;
+                top:35px;
+            }
+            to { 
+                right:55px;
+                top:45px; 
+            }
+        }
+        .eyeball{
+            -webkit-animation: eyeballmoving1 3s ease infinite alternate; 
+            -o-animation: eyeballmoving1 3s ease infinite alternate;
+            animation: eyeballmoving1 3s ease infinite alternate; 
+        }
+        .eyeleft .eyeball:after{
+            -webkit-animation: eyeballmoving2 3s ease infinite alternate; 
+            -o-animation: eyeballmoving2 3s ease infinite alternate;
+            animation: eyeballmoving2 3s ease infinite alternate; 
+        }
+        .eyeright .eyeball:after{
+            -webkit-animation: eyeballmoving3 32s ease infinite alternate; 
+            -o-animation: eyeballmoving3 3s ease infinite alternate;
+            animation: eyeballmoving3 3s ease infinite alternate; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="yellowboy">
+        <div class="hair">
+            <span class="hair1"></span>
+            <span class="hair2"></span>
+            <span class="hair3"></span>
+        </div>
+        <div class="bodyH">
+            <div class="hat">
+            </div>
+            <div class="eye">
+                <div class="eyeleft">
+                    <div class="lefttemple"></div>
+                    <div class="eyeball"></div>
+                </div>
+                <div class="eyeright">
+                    <div class="righttemple"></div>
+                    <div class="eyeball"></div>
+                </div>
+                <div class="eyeline">
+                </div>
+            </div>
+            <div class="mouth">
+                <span class="move-mouth"></span>
+            </div>
+            <div class="cloth">
+                <div class="cloth-up">
+                    <div class="cloth-pocket">
+                    </div>
+                </div>
+                <div class="cloth-down">
+                    <div class="cloth-lineleft"></div>
+                    <div class="cloth-linemidd"></div>
+                    <div class="cloth-lineright"></div>
+                </div>
+                <div class="cloth-tapeleft" id="tapeleft">
+                </div>
+                <div class="cloth-taperight" id="taperight"></div>
+            </div>
+        </div>
+        <div class="arm">
+            <div class="armleft">
+                <span class="arm-lineL"></span>
+            </div>
+            <div class="armright">
+                <span class="arm-lineR"></span>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="leftfoot">
+                <div class="socks"></div>
+            </div>
+            <div class="rightfoot">
+                <div class="socks"></div>
+            </div>
+        </div>
+        <div class="foot-shadow"></div>
+    </div>
+</body>
+
+</html>

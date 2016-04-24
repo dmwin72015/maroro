@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demo-鼠标移入渐变</title>
+	<style>
+		body{
+			background:#333;
+		}
+		ul{list-style:none;margin:0;padding:0;}
+		.piclist{
+			width:830px;
+			margin:50px auto;
+			overflow:hidden;
+		}
+		.piclist li{
+			float:left;
+		}
+		.piclist li+li{margin-left:10px;}
+		.picbox{
+			width:200px;
+			height:200px;
+			background:red;
+			position: relative;
+		}
+		.picbox>img{
+			width:100%;
+			height:100%;
+		}
+		.piclist .border{
+			opacity:0;
+			position: absolute;
+			background:#eee;
+			transition: all 0.5s ease;
+		}
+		.leftBorder{
+			width:5px;
+			height:0;
+			left:0;
+			top:0;
+		}
+		.topBorder{
+			width:0;
+			height:5px;
+			left:0;
+			top:0;
+		}
+		.rightBorder{
+			width:5px;
+			height:0;
+			right:0;
+			bottom:0;
+		}
+		.bottomBorder{
+			width:0;
+			height:5px;
+			right:0;
+			bottom:0;
+		}
+		.picbox:hover .leftBorder{
+			height:100%;
+			opacity:1;
+		}
+		.picbox:hover .topBorder{
+			width:100%;
+			opacity:1;
+		}
+		.picbox:hover .rightBorder{
+			height:100%;
+			opacity:1;
+		}
+		.picbox:hover .bottomBorder{
+			width:100%;
+			opacity:1;
+		}
+	</style>
+</head>
+<body>
+	<ul class="piclist">
+		<li>
+			<div class="picbox">
+				<div class="border leftBorder"></div>
+				<div class="border topBorder"></div>
+				<div class="border rightBorder"></div>
+				<div class="border bottomBorder"></div>
+				<img src="./images/dog1.jpg" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="picbox">
+				<div class="border leftBorder"></div>
+				<div class="border topBorder"></div>
+				<div class="border rightBorder"></div>
+				<div class="border bottomBorder"></div>
+				<img src="./images/dog3.jpg" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="picbox">
+				<div class="border leftBorder"></div>
+				<div class="border topBorder"></div>
+				<div class="border rightBorder"></div>
+				<div class="border bottomBorder"></div>
+				<img src="./images/dog2.jpg" alt="">
+			</div>
+		</li>
+		<li>
+			<div class="picbox">
+				<div class="border leftBorder"></div>
+				<div class="border topBorder"></div>
+				<div class="border rightBorder"></div>
+				<div class="border bottomBorder"></div>
+				<img src="./images/dog4.jpg" alt="">
+			</div>
+		</li>
+	</ul>
+</body>
+</html>

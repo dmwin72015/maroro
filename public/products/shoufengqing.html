@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        body,ul,p,h1,h2,h3{margin:0;padding:0;font-family:"\5fae\8f6f\96c5\9ed1"}
+        ul,ol{list-style:none}
+        .hide{display:none}
+        a{text-decoration:none}
+        body{padding-top:40px;background:#9fc3e8}
+        em{font-style:normal}
+        .box{width:876px;height:300px;overflow:hidden;margin:0 auto;position:relative;background:#d7a3f5}
+        .box a{display:block;top:0;height:100%;width:740px;position:absolute}
+        .box em{position:absolute;width:34px;height:290px;color:#FFF;font-weight:700;font-size:18px;text-align:center;padding-top:10px;opacity:.8;top:0;left:0}
+        a img{display:block;width:100%;height:100%;cursor:auto}
+    </style>
+    <script src="./js/move.js"></script>
+    <script>
+    window.onload = function() {
+        var box = document.getElementById("box");
+        addEvent(box, "mouseover", function(ev) {
+            var oEv = ev || event;
+            var oSrc = oEv.srcElement || oEv.target;
+            if (oSrc.tagName.toLowerCase() == "em") {
+                var index = getIndex(box.children, oSrc.parentNode);
+                for (var n = 0; n < box.children.length; n++) {
+                    if (index < n) {
+                        var j = {
+                            left: box.offsetWidth - (box.children.length - n) * oSrc.offsetWidth,
+                        }
+                    } else {
+                        var j = {
+                            left: n * oSrc.offsetWidth,
+                        }
+                    }
+                    moveOne(box.children[n], j, {
+                        duration: 440,
+                        easing: Tween.Sine.easeOut
+                    })
+                }
+            }
+        })
+    };
+
+    function getIndex(arr, obj) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] == obj) {
+                return i;
+                break
+            }
+        }
+    };
+    </script>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <a href="javascript:;">
+            <img src="../images/shq_lufei.jpg" alt="">
+            <em style="background: #d7ad33;">第一页</em>
+        </a>
+        <a href="javascript:;" style="left:34px;">
+            <img src="../images/shq_mingren.jpg" alt="">
+            <em style="background: #de2c78;">第二页</em>
+        </a>
+        <a href="javascript:;" style="left:68px;">
+            <img src="../images/shq_xiaomaomi.jpg" alt="">
+            <em style="background: #232c1f;">第三页</em>
+        </a>
+        <a href="javascript:;" style="left:102px;">
+            <img src="../images/shq_erha.jpg" alt="">
+            <em style="background: #52da5a;">第四页</em>
+        </a>
+        <a href="javascript:;" style="left:136px;">
+            <img src="../images/shq_dabaimao.jpg" alt="" />
+            <em style="background: #99ff1a;">第五页</em>
+        </a>
+    </div>
+</body>
+
+</html>
