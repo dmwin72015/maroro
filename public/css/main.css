@@ -2,38 +2,31 @@
 body { min-width: 840px; }
 .skin-background { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -10; background-repeat: no-repeat; background-position: center 0; background-size: cover; }
 .topbar { width: 100%; height: 35px; z-index: 1000; }
-.topbg { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: linear-gradient(rgba(15, 25, 50, .5) 0, rgba(15, 25, 50, .5) 100%); filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#4C0F1932, endColorStr=#4C0F1933, gradientType=0); }
+.topbg { position: absolute; width: 100%; height: 100%; top: 0; left: 0; background-image: linear-gradient(rgba(15, 25, 50, .5) 0, rgba(15, 25, 50, .5) 100%); filter: progid: DXImageTransform.Microsoft.Gradient(startColorStr=#4C0F1932, endColorStr=#4C0F1933, gradientType=0); }
 .topmenu { position: absolute; left: 0px; top: 0; }
 .weatherBox, .avatar { float: left; height: 100%; }
 .avatar { width: 85px; height: 35px; margin-left: 15px; background: transparent url('../images/icon.png') no-repeat 0 -24px; }
-.weatherBox { margin-left: 10px; position: relative;}
+.weatherBox { margin-left: 10px; position: relative; }
 .weatherBox.unkown-city .weather-now { display: none; }
-.weather-now {cursor:pointer;}
+.weather-now { cursor: pointer; }
 .weather-now>span { display: inline-block; vertical-align: middle; height: 100%; line-height: 35px; color: #fff; font-size: 14px; }
 .weather-now>span.weather-icon { width: 18px; height: 18px; }
 /*-------------------------*/
-.weather-detail-setting { font-family:arial; top:35px;left:0;position: absolute; width: 540px; height: 200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background-color: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);}
-.weather-detail-setting:after{
-	content:'';
-	border:10px solid transparent ;
-	border-bottom-color: #fff;
-	position: absolute;
-	top:-15px;
-	left:13px;
-}
-.detail,.city-select{position: relative;}
+.weather-detail-setting { font-family: arial; top: 35px; left: 0; position: absolute; width: 540px; height: 200px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background-color: #fff; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.weather-detail-setting:after{ content: ''; border: 10px solid transparent; border-bottom-color: #fff; position: absolute; top: -15px; left: 13px; }
+.detail,.city-select{ position: relative; }
 .date { margin-left: 15px; margin-right: 15px; font-size: 14px; color: #666; border-bottom: 1px solid #ececec; }
 .date>span{ display: inline-block; vertical-align: middle; line-height: 32px; }
-.future-7>a{font-size:12px; margin-left:20px; color:#0079f4;}
+.future-7>a{ font-size: 12px; margin-left: 20px; color: #0079f4; }
 .set-btn { float: right; }
 .recently-day { padding-left: 15px; padding-right: 15px; }
-.recently-day a { text-decoration: none; color: #333 ;}
-.today h3{}
-.recently-day .day-item {white-space:nowrap; float: left; width: 86px; text-align: center; font-size: 12px; padding-top: 5px; padding-bottom: 5px; }
+.recently-day a { text-decoration: none; color: #333; }
+.today h3{ }
+.recently-day .day-item { white-space: nowrap; float: left; width: 86px; text-align: center; font-size: 12px; padding-top: 5px; padding-bottom: 5px; }
 .day-item:hover { background-color: #eaeaea; }
 .recently-day .day-item +.day-item { margin-left: 20px; }
-.day-item h3{font-weight:normal;}
-.day-item .wea-icon { width: 80px; height: 80px; margin-left: 3.5px;margin-top:2px; background-image: url(../images/blue80.png); }
+.day-item h3{ font-weight: normal; }
+.day-item .wea-icon { width: 80px; height: 80px; margin-left: 3.5px; margin-top: 2px; background-image: url(../images/blue80.png); }
 .day-item.today,.day-item.today h3 { font-weight: bold; }
 .day-item p { margin-top: 4px; }
 /*-------------------------*/
@@ -69,7 +62,7 @@ body { min-width: 840px; }
 .footer>ul li .title { font-size: 16px; line-height: 24px; font-weight: bold; }
 .friendly >li, .thanks>li, .description, .QQ, .github { padding: 3px 0; }
 .friendly a, .thanks a, .github a { transition: all 0.2s cubic-bezier(0.42, 0, 0.58, 1); }
-.friendly a:hover, .thanks a:hover, .github a:hover { color: #D4D4D4;	/*text-shadow:1px 1px #fff;*/ text-shadow: 0 0 3px #fff; }
+.friendly a:hover, .thanks a:hover, .github a:hover { color: #D4D4D4; /*text-shadow: 1px 1px #fff; */ text-shadow: 0 0 3px #fff; }
 .copyright { text-align: center; line-height: 34px; border-top: 1px solid #b3b3b3; }
 
 /*回到顶部样式*/

@@ -51,6 +51,7 @@ define(function(require, exports, module) {
             var that = this;
             var DM = {};
             var eleClass = ['flip-item', 'past', 'prev', 'current', 'next', 'future'],
+                fnClass = eleClass.slice(1),
                 tiggerEvent = ['click', 'hover', 'mouseover'];
             config = {
                 autoPlay: true,
@@ -71,22 +72,40 @@ define(function(require, exports, module) {
                         _opt = this.config,
                         _nSon = this.aSon,
                         _event = _opt.sEv;
-                        
+
                     $(this).on(_event, '.' + eleClass.slice(1).join(',.'), function(ev) {
-                        var sClass = ev.cuurentTarget.className.split(' ')[1];
-                        switch (sClass) {
-                            case eleClass[1]:
-                                
-                                break;
-                            case eleClass[1]:
-                                break;
-                            case eleClass[1]:
-                                break;
-                            case eleClass[1]:
-                                break;
-                            case eleClass[1]:
-                                break;
+                        var sClass = this.className.split(' ')[1];
+                        var _this = $(this);
+                        if(sClass != eleClass[3]){
+                            _this.removeClass(fnClass).addClass(eleClass[3]);
+                            var aNext = _this.nextAll().removeClass(fnClass),
+                                aPrev = _this.prevAll().removeClass(fnClass);
+                            for(var i=0;i<aNext.length;i++){
+                                aNext.eq(i).addClass(fnClass[i+3])
+                            }
                         }
+
+                    /*
+                    =》当前 next
+                       next-》current
+                       current-》prev
+                       prev-》past
+                       past-》future
+                       future-》next
+                    */
+
+
+
+
+
+
+
+
+
+
+
+
+
                     });
                 });
             };
