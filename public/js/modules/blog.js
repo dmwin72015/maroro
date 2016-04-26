@@ -71,12 +71,30 @@ define(function(require, exports, module) {
                         _opt = this.config,
                         _nSon = this.aSon,
                         _event = _opt.sEv;
-                    $(this).on(_event, '.' + eleClass.slice(1).join(',.'), turn);
+                    $(this).on(_event, '.' + eleClass.slice(1).join(',.'), function(ev) {
+                        var sClass = ev.cuurentTarget.className.split(' ')[1];
+                        switch (sClass) {
+                            case eleClass[1]:
+                                
+                                break;
+                            case eleClass[1]:
+                                break;
+                            case eleClass[1]:
+                                break;
+                            case eleClass[1]:
+                                break;
+                            case eleClass[1]:
+                                break;
+                        }
+
+                    });
                 });
             };
-            function turn(ev){
+
+            function turn(ev) {
                 console.log(this);
             }
+
             function prevGo(ev) {
                 var target = ev.currentTarget.className;
                 console.log(ev);
