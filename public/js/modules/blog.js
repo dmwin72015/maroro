@@ -70,12 +70,7 @@ define(function(require, exports, module) {
                     var
                         _opt = this.config,
                         _nSon = this.aSon,
-                        _event = _opt.sEv,
-                        _past = $(this).find('.' + eleClass[1]),
-                        _prev = $(this).find('.' + eleClass[2]),
-                        _curr = $(this).find('.' + eleClass[3]),
-                        _next = $(this).find('.' + eleClass[4]),
-                        _futu = $(this).find('.' + eleClass[5]);
+                        _event = _opt.sEv;
                     $(this).on(_event, '.' + eleClass.slice(1).join(',.'), turn);
                 });
             };
