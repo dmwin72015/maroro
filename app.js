@@ -20,7 +20,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
 laytpl.config({
-    cache: true,
+    cache: false,
     min: true
 });
 app.engine('.html', laytpl.__express);
