@@ -71,6 +71,7 @@ define(function(require, exports, module) {
                         _opt = this.config,
                         _nSon = this.aSon,
                         _event = _opt.sEv;
+                        
                     $(this).on(_event, '.' + eleClass.slice(1).join(',.'), function(ev) {
                         var sClass = ev.cuurentTarget.className.split(' ')[1];
                         switch (sClass) {
@@ -86,7 +87,6 @@ define(function(require, exports, module) {
                             case eleClass[1]:
                                 break;
                         }
-
                     });
                 });
             };
