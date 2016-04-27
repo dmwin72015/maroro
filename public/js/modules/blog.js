@@ -45,101 +45,119 @@ define(function(require, exports, module) {
         }
     };
 
-    ! function($) {
-        var config = {};
-        $.fn.DmCarousel = function(opt) {
-            var that = this;
-            var DM = {};
-            var eleClass = ['flip-item', 'past', 'prev', 'current', 'next', 'future'],
-                fnClass = eleClass.slice(1),
-                tiggerEvent = ['click', 'hover', 'mouseover'];
-            config = {
+    ! function(root, doc, $) {
+        // 全局变量、参数
+        root = root ? root : window;
+        doc = doc ? doc : window.document;
+        var config = {
                 autoPlay: true,
                 time: 1500,
-                sEv: 'click'
-            }
-            DM.global = {};
+                aEvents :['click', 'hover', 'mouseover'],
+                currEv: 'click',
+                defaultIndex:3
+            },
+            eleClass  = ['flip-item', 'unshow', 'past', 'prev', 'current', 'next', 'future'],
+            fnClass   = eleClass.slice(1),//用到的五个功能类名
+            sAllClass = '.' + eleClass[0],//.flip-item
+            sfnClass  = '.' + fnClass.join(',.');//.past,.prev,.current,.next,.future
+
+        // 插件调用名称
+        $.fn.DmCarousel = function(opt) {
+            // alias 设置 这里的 that(this) 调用这个方法的jQuery对象（可能是多个，也可能是一个）
+            /*
+              that      调用此方法的jQuery对象
+              eleClass  默认的类名称
+              fnClass   默认显示元素的类名  
+            **/
+            var 
+                that        = this,
+                eleConfig   = $.extend({}, config, opt);
+
+            // console.log(that);
 
             function init(opt) {
-                var _this = this;
+                // 遍历调用这个方法的jQuery对象，取得其中的每个元素。
+                var arr = [];
                 that.each(function(i, e) {
+                    // 这里的this就是每一个DOM对象（原生）
 
-                    this.config = $.extend({}, DM.global, config, opt),
-                        this.aSon = $(this).find('.' + eleClass[0]),
-                        this.nSonLen = this.aSon.length;
+                    // 初始化参数、配置信息
+                    this.jConfig     = $.extend({},eleConfig),
+                    this.aAllSon     = $(this).find(sAllClass),
+                    this.nAllSonLen  = this.aAllSon.length,
+                    this.aFnSon      = $(this).find(sfnClass),
+                    this.DM          = {};
 
-                    var
-                        _opt = this.config,
-                        _nSon = this.aSon,
-                        _event = _opt.sEv;
 
-                    $(this).on(_event, '.' + eleClass.slice(1).join(',.'), function(ev) {
-                        var sClass = this.className.split(' ')[1];
-                        var _this = $(this);
-                        if(sClass != eleClass[3]){
-                            _this.removeClass(fnClass).addClass(eleClass[3]);
-                            var aNext = _this.nextAll().removeClass(fnClass),
-                                aPrev = _this.prevAll().removeClass(fnClass);
-                            for(var i=0;i<aNext.length;i++){
-                                aNext.eq(i).addClass(fnClass[i+3])
+                    // 取别名       
+                    var             
+                        $this       = $(this),          //this的jQuery对象
+                        _opt        = this.jConfig,     //参数
+                        _aAllSon    = this.aAllSon,     //子元素几个
+                        _nlen       = this.nAllSonLen,  //子元素长度
+                        _aFnSon     = this.aFnSon,      //显示元素集合
+                        _event      = _opt.currEv,      //触发事件
+                        _DM         = this.DM;          //返回的对象
+                        
+
+                    //每个元素的返回对象 
+                    // fnClass   'unshow', 'past', 'prev', 'current', 'next', 'future'
+                    _DM = {
+                        srcEle: this,
+                        config: this.jConfig,
+                        go: function(index) {
+                            _aFnSon.removeClass(fnClass.join(' '));
+                            _aFnSon.eq(index).addClass(fnClass[3]);
+                            console.log(index);
+                            switch (index) {
+                                case 0:
+                                    _aAllSon.eq(_nlen-1).addClass(fnClass[2]);
+                                    _aAllSon.eq(_nlen-2).addClass(fnClass[1]);
+                                    _aAllSon.eq(1).addClass(fnClass[4]);
+                                    _aAllSon.eq(2).addClass(fnClass[5]);
+                                    for(var i=0;i<_nlen;i++){
+                                        if(i!=1 && i!=2 && i!= _nlen-1 && i!=_nlen-2){
+                                            _aAllSon.eq(i).addClass(fnClass[0])
+                                        }
+                                    }
+                                    break;
+                                case 1:
+                                    _aAllSon.eq(_nlen-1).addClass(fnClass[1]);
+                                    _aAllSon.eq(0).addClass(fnClass[2]);
+                                    _aAllSon.eq(2).addClass(fnClass[4]);
+                                    _aAllSon.eq(3).addClass(fnClass[5]);
+                                    for(var i=0;i<_nlen;i++){
+                                        if(i!=2 && i!=3 && i!= _nlen-1 && i!=0){
+                                            _aAllSon.eq(i).addClass(fnClass[0])
+                                        }
+                                    }
+                                    break;
+                                case _nlen-1:
+                                    
+                                    break;
+                                case _nlen-2:
+                                
+                                    break;
+                                case 4:
+                                    
+                                    break;
                             }
                         }
+                    };
 
-                    /*
-                    =》当前 next
-                       next-》current
-                       current-》prev
-                       prev-》past
-                       past-》future
-                       future-》next
-                    */
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    // 绑定事件
+                    $(this).on(_event, sfnClass, function(ev) {
+                        if(!$(this).hasClass(fnClass[3]))
+                            _DM.go($(this).index())
                     });
+                    arr[i] = _DM;
                 });
+                return arr;
             };
-
-            function turn(ev) {
-                console.log(this);
-            }
-
-            function prevGo(ev) {
-                var target = ev.currentTarget.className;
-                console.log(ev);
-            };
-
-            function nextGo(ev) {
-                var target = ev.currentTarget.className;
-                console.log(ev);
-            };
-
-            function pastGo(ev) {
-                var target = ev.currentTarget.className;
-                console.log(ev);
-            };
-
-            function futuGo(ev) {
-                var target = ev.currentTarget.className;
-                console.log(ev);
-            };
-
-            return init(), DM;
+            return init();
         };
-    }($)
-    var carouse = $('#DmCarousel').DmCarousel();
+    }(window, document, $)
+    var carouse = $('#DmCarousel,#nav').DmCarousel();
+
     console.log(carouse);
-    // $('#DmCarousel').on('click','.current',function(){
-    //     alert('a');
-    // });
 });

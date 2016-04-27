@@ -128,9 +128,9 @@
 	-webkit-backface-visibility: hidden;
   	-moz-backface-visibility: hidden;
   		backface-visibility: hidden;
-  	-webkit-perspective: 800px;
-	-moz-perspective: 800px;
-	perspective: 800px;
+  	-webkit-perspective: 1000px;
+	-moz-perspective: 1000px;
+	perspective: 1000px;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -144,11 +144,11 @@
 .flip-items .flip-item{
 	position: absolute;
 	cursor: pointer;
-	-webkit-transition: all 175ms ease-in-out;
-	-o-transition: all 175ms ease-in-out;
-	-ms-transition: all 175ms ease-in-out;
-	-moz-transition: all 175ms ease-in-out;
-	transition: all 175ms ease-in-out;
+	-webkit-transition: all 130ms ease-in-out;
+	-o-transition: all 130ms ease-in-out;
+	-ms-transition: all 130ms ease-in-out;
+	-moz-transition: all 130ms ease-in-out;
+	transition: all 130ms ease-in-out;
 
 	-webkit-transform-origin: 50% 50%;
 	-moz-transform-origin: 50% 50%;
@@ -161,6 +161,13 @@
 	top:50%;
 	
 }
+.flip-item.unshow{
+		-webkit-transform: translate(-50%,-50%) scale(0.2) ;
+	-ms-transform: translate(-50%,-50%) scale(0.2) ; 
+	-o-transform: translate(-50%,-50%) scale(0.2) ;
+	transform:   translate(-50%,-50%) scale(0.2) ;
+	z-index: 1;
+}
 .flip-item.past{
 	-webkit-transform: translate(-112%,-50%) translateZ(0) rotateY(80deg) scale(0.6) ;
 	-ms-transform: translate(-112%,-50%) translateZ(0) rotateY(80deg) scale(0.6) ; 
@@ -170,6 +177,7 @@
     -moz-filter: blur(3px);
     -ms-filter: blur(3px);
     filter: blur(3px);
+    z-index: 2;
 
 }
 .flip-item.prev{
@@ -189,6 +197,18 @@
 	-o-transform: translate(-50%,-50%) scale(1) ;
 	transform:   translate(-50%,-50%) scale(1) ;
 	z-index: 10;
+	-webkit-box-shadow: 
+		0 15px 10px -10px rgba(0, 0, 0, 0.5), 
+		0 1px 4px rgba(0, 0, 0, 0.3), 
+		0 0 60px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow: 
+		0 15px 10px -10px rgba(0, 0, 0, 0.5), 
+		0 1px 4px rgba(0, 0, 0, 0.3), 
+		0 0 40px rgba(0, 0, 0, 0.1) inset;
+	box-shadow: 
+		0 15px 10px -10px rgba(0, 0, 0, 0.5), 
+		0 1px 4px rgba(0, 0, 0, 0.3), 
+		0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 .flip-item.next{
 	-webkit-transform: translate(-26%,-50%) translateZ(0) rotateY(-60deg) scale(0.8) ;
@@ -210,6 +230,7 @@
     -moz-filter: blur(3px);
     -ms-filter: blur(3px);
     filter: blur(3px);
+    z-index: 2;
 }
 .next:hover,.future:hover,.prev:hover,.past:hover{
 	-webkit-filter: blur(0);
