@@ -31,3 +31,43 @@ body { font: 14px/1.6  "Helvetica Neue","Hiragino Sans GB","Microsoft YaHei","\9
 .textcn{text-indent:2em;}
 .disN{display:none;}
 img{max-width:100%;}
+html,body {
+	scrollbar-face-color:#FB4446; /*滚动条3D表面（ThreedFace）的颜色*/ 
+	scrollbar-highlight-color:#fff; /*滚动条3D界面的亮边（ThreedHighlight）颜色*/ 
+	scrollbar-shadow-color:#eeeeee; /*滚动条3D界面的暗边（ThreedShadow）颜色*/ 
+	scrollbar-3dlight-color:#eeeeee; /*滚动条亮边框颜色*/ 
+	scrollbar-arrow-color:#000; /*滚动条方向箭头的颜色 */ 
+	scrollbar-track-color:#fff; /*滚动条的拖动区域(TrackBar)颜色*/
+	scrollbar-darkshadow-color:#fff; /*滚动条暗边框（ThreedDarkShadow）颜色*/ 
+}
+/*---滚动条默认显示样式--*/  
+::-webkit-scrollbar-thumb{  
+   background-color:#cdcdcd;  
+   outline-offset:-2px;  
+   outline:2px solid #fff;  
+   /*-webkit-border-radius:4px;  */
+   /*border: 2px solid #fff;  */
+   width: 8px;
+   border: none;
+   border-radius: 0;
+   min-height:100px; 
+}  
+/*---鼠标点击滚动条显示样式--*/  
+::-webkit-scrollbar-thumb:hover{  
+   background-color:#F33216;  
+   /*-webkit-border-radius:4px;  */
+}  
+/*---滚动条大小--*/  
+::-webkit-scrollbar{  
+   width:8px;  
+   /*height:8px;  */
+}
+/*----滚动条上面的s箭头----*/
+::-webkit-scrollbar-button{
+
+}  
+/*---滚动框背景样式--*/  
+::-webkit-scrollbar-track-piece{  
+   background-color:#fff;  
+   -webkit-border-radius:0;  
+}

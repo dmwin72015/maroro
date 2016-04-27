@@ -99,24 +99,25 @@ define(function(require, exports, module) {
                         _event      = _opt.currEv,      //触发事件
                         _DM         = this.DM;          //返回的对象
                         
-
+                    console.log(_nlen+'子元素个数');
                     //每个元素的返回对象 
                     // fnClass   'unshow', 'past', 'prev', 'current', 'next', 'future'
                     _DM = {
                         srcEle: this,
                         config: this.jConfig,
                         go: function(index) {
+                            if(index>_nlen-1) return;
                             _aFnSon.removeClass(fnClass.join(' '));
-                            _aFnSon.eq(index).addClass(fnClass[3]);
                             console.log(index);
                             switch (index) {
                                 case 0:
-                                    _aAllSon.eq(_nlen-1).addClass(fnClass[2]);
                                     _aAllSon.eq(_nlen-2).addClass(fnClass[1]);
+                                    _aAllSon.eq(_nlen-1).addClass(fnClass[2]);
+                                    _aAllSon.eq(index).addClass(fnClass[3]);
                                     _aAllSon.eq(1).addClass(fnClass[4]);
                                     _aAllSon.eq(2).addClass(fnClass[5]);
                                     for(var i=0;i<_nlen;i++){
-                                        if(i!=1 && i!=2 && i!= _nlen-1 && i!=_nlen-2){
+                                        if(i!=1 && i!=2 && i!= _nlen-1 && i!=_nlen-2 && i!=index){
                                             _aAllSon.eq(i).addClass(fnClass[0])
                                         }
                                     }
@@ -124,22 +125,51 @@ define(function(require, exports, module) {
                                 case 1:
                                     _aAllSon.eq(_nlen-1).addClass(fnClass[1]);
                                     _aAllSon.eq(0).addClass(fnClass[2]);
+                                    _aAllSon.eq(index).addClass(fnClass[3]);
                                     _aAllSon.eq(2).addClass(fnClass[4]);
                                     _aAllSon.eq(3).addClass(fnClass[5]);
                                     for(var i=0;i<_nlen;i++){
-                                        if(i!=2 && i!=3 && i!= _nlen-1 && i!=0){
+                                        if(i!=0 && i!=2 && i!=3 && i!= _nlen-1 && i!=index){
                                             _aAllSon.eq(i).addClass(fnClass[0])
                                         }
                                     }
                                     break;
                                 case _nlen-1:
-                                    
+                                    _aAllSon.eq(_nlen-3).addClass(fnClass[1]);
+                                    _aAllSon.eq(_nlen-2).addClass(fnClass[2]);
+                                    _aAllSon.eq(index).addClass(fnClass[3]);
+                                    _aAllSon.eq(0).addClass(fnClass[4]);
+                                    _aAllSon.eq(1).addClass(fnClass[5]);
+
+                                    for(var i=0;i<_nlen;i++){
+                                        if(i!=1 && i!=0 && i!= _nlen-2 && i!=_nlen-3 && i!=index){
+                                            _aAllSon.eq(i).addClass(fnClass[0])
+                                        }
+                                    }
                                     break;
                                 case _nlen-2:
-                                
+                                    _aAllSon.eq(_nlen-4).addClass(fnClass[1]);
+                                    _aAllSon.eq(_nlen-3).addClass(fnClass[2]);
+                                    _aAllSon.eq(index).addClass(fnClass[3]);
+                                    _aAllSon.eq(_nlen-1).addClass(fnClass[4])
+                                    _aAllSon.eq(0).addClass(fnClass[5]);
+                                    for(var i=0;i<_nlen;i++){
+                                        if(i!=0 && i!=_nlen-1 && i!=_nlen-4  && i!=_nlen-3 && i!=index){
+                                            _aAllSon.eq(i).addClass(fnClass[0])
+                                        }
+                                    }
                                     break;
-                                case 4:
-                                    
+                                default:
+                                    _aAllSon.eq(index-2).addClass(fnClass[1]);
+                                    _aAllSon.eq(index-1).addClass(fnClass[2]);
+                                    _aAllSon.eq(index).addClass(fnClass[3]);
+                                    _aAllSon.eq(index+1).addClass(fnClass[4]);
+                                    _aAllSon.eq(index+2).addClass(fnClass[5]);
+                                    for(var i=0;i<_nlen;i++){
+                                        if(i!=index-2 && i!=index-1 && i!=index+1 && i!=index+2 && i!=index) {
+                                            _aAllSon.eq(i).addClass(fnClass[0]);
+                                        }
+                                    }
                                     break;
                             }
                         }
@@ -157,7 +187,7 @@ define(function(require, exports, module) {
             return init();
         };
     }(window, document, $)
-    var carouse = $('#DmCarousel,#nav').DmCarousel();
+    var carouse = $('#DmCarousel').DmCarousel();
 
     console.log(carouse);
 });

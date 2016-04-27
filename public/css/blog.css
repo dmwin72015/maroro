@@ -36,7 +36,7 @@
 .content .title { line-height: 36px; border-bottom: #db6d4c 4px solid; }
 .title .sub { float: right; }
 .sub a { display: inline-block; font-size: 12px; color: #777; padding: 0 5px; font-weight: normal; }
-.arc_item { padding: 25px 0; border-bottom: 1px solid #ccc; overflow: hidden; }
+.arc_item { padding: 25px 0; border-bottom: 1px solid #ccc; overflow: hidden; position: relative;}
 .arc_item>aside { width: 25%; float: left; }
 .arc_pic { overflow: hidden; }
 .arc_pic img { max-width: 100%; transform-origin: center center; transition: all 0.8s; }
@@ -46,7 +46,7 @@
 .arc_title a { color: #333; }
 .arc_title a:hover { text-decoration: underline; }
 .arc_text { font-size: 12px; color: #666; }
-.arc_author { overflow: hidden; }
+.arc_author { overflow: hidden; position: absolute; right: 5px;bottom: 25px;}
 .arc_author>span { display: inline-block; padding-right: 30px; }
 .arc_author a, .arc_author .icon { display: inline-block; vertical-align: middle; font-size: 12px; }
 .icon { width: 16px; height: 15px; background: url(../images/new_icon.png) 0 0 no-repeat; }
