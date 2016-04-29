@@ -126,7 +126,6 @@ define(function(require, exports, module) {
                                     var arrIndex = [index - 2, index - 1, index, index + 1, index + 2];
                                     break;
                             }
-                            console.log(arrIndex);
                             for (var x = 0; x < arrIndex.length; x++) {
                                 _aAllSon.eq(arrIndex[x]).addClass(fnClass[x+1]);
                             }
