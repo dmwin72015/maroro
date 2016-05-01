@@ -14,6 +14,7 @@ var users = require('./routes/users');
 var weixin = require('./routes/weixin');
 var bg = require('./routes/bg');
 var note = require('./routes/note');
+var blog = require('./routes/blog');
 var app = express();
 
 // view engine setup 模板设置
@@ -54,6 +55,7 @@ app.use('/users', users);
 app.use('/admin', bg);
 app.use('/api', note);
 app.use('/weixin', weixin);
+app.use('/blog', blog);
 
 
 // catch 404 and forward to error handler
