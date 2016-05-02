@@ -3,3 +3,43 @@
 	#1ab394	主题绿色风格颜色
 
 */
+img{max-width: 100%}
+.myadmin-skin {
+}
+.wrapper>header{}
+.myadmin-skin .navbar-fixed-top {
+    background-color: #1ab394;
+    _box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.myadmin-skin .navbar-header{height: 100%;line-height: 50px;}
+.myadmin-skin .navbar-header .btn{color: #fff}
+.btn-myadmin:hover ,.btn-myadmin:active,
+.fn-links>li>a:hover {background-color: #18a689; border-color: #18a689;}
+#toggleLeftSideBar{
+    margin-left:15px;
+}
+.fn-links{
+    padding-right: 25px;
+}
+.fn-links>li{
+    display: inline-block;
+    vertical-align: top;
+}
+.fn-links>li>a{ position: relative;min-height:45px;color: #fff;padding-top:15px;padding-bottom: 15px;}
+.fn-links>li>a.user-logo{padding:5px 8px}
+.user-logo img{
+    width:38px;
+    height:38px;
+    border-radius: 50%;
+}
+.fn-links>li>a>.label{
+    font-size: 10px;
+    line-height: 12px;
+    position: absolute;
+    right:2px;
+    top:4px;
+    padding:0.2em 0.3em;
+}
+.fn-links>li>a>.fa{
+    font-size: 16px;
+}
