@@ -1,0 +1,122 @@
+【表列表】
+
+	用户表				blog_user
+	用户组表				blog_user_group
+	用户角色表 			blog_user_role
+	后台菜单表			blog_admin_menu
+	文章表				blog_article
+	留言表				blog_reply_msg
+	文章标签表			blog_article_label
+	文章类别表			blog_category
+
+-----------------------------------------
+【表结构】
+
+	blog_user 			用户表   				
+	ID 					唯一标识
+	user_login			登录名
+	user_pass			登录密码
+	user_nickname		昵称
+	user_email			用户邮件地址
+	user_url			用户网址
+	user_roleID			角色ID（和权限有关）
+	user_rolename		用户角色
+	user_registered 	注册时间
+	user_activation_key	激活码
+	user_status			状态
+	display_name		显示名称（0登录名 1昵称 3邮件）
+
+	blog_user_group		用户组表				
+	ID  				唯一标识
+	gropu_name			组名称
+	group_description	组描述
+	group_roleID		组角色(权限)
+	group_rolaname		角色名称
+	create_time			创建时间
+	create_userID		创建人ID
+	create_userlogin	创建人姓名
+
+	blog_user_role		用户角色表
+	ID 					唯一标识
+	role_name			角色名称(管理员、普通用户、。。。)
+	role_menu			权限菜单(对那些菜单有权限)
+	create_time			创建时间
+	create_userID		创建人ID
+	create_userlogin	创建人姓名	
+
+
+	blog_admin_menu		菜单(后台菜单表)
+	ID    				唯一标识
+	menu_name			名称
+	menu_level			级别
+	menu_parent_id		父级菜单ID
+	menu_status			菜单状态（0启用  1停用）
+	menu_url			菜单地址
+	menu_permission		菜单权限(0:管理员权限  1:一级会员  2:2级会员  ... )
+	create_time			创建时间
+	create_userID		创建人ID	
+	create_uerlogin		创建者
+
+	blog_article 		文章表 				
+	ID  				唯一标识		
+	arti_name			文章名称
+	arti_author_id		文章作者ID
+	arti_author_name	文章作者名字
+	arti_content		文章内容
+	arti_sorce			文章来源
+	arti_status			文章状态(0 发布)
+	arti_label			文章标签(与标签表的数据保持一致)
+	arti_cate_id		文章类别ID(数据与类别表保持一致)
+	arti_cate_name		类比名称
+	create_time			创建时间
+	pub_time			发布时间
+	last_edit_time		上一次编辑时间
+	read_permission			阅读权限(-1:管理员权限   0:没有限制  1:一级会员  2:2级会员  ... )
+	read_num			访问数量
+	like_num			喜欢
+	unlike_num			不喜欢
+	hot					火热度（排名）
+	
+
+
+	blog_reply_msg		留言表  		
+	ID 					唯一标识	
+	article_id			文章ID
+	article_title		文章标题
+	reply_content		回复内容
+	reply_time			回复时间
+	reply_userID		回复人ID
+	reply_userName		回复人姓名
+
+	blog_article_label	标签表
+	ID 					标签唯一标识
+	label_name			标签名字
+	label_description	标签描述
+	label_personal		标签私有(0否 1是)
+	label_status		标签状态(0启用 1停用)
+	label_style			标签样式
+	create_time			创建时间
+	create_userID		创建人ID
+	create_userlogin	创建人姓名
+
+	blog_category		文章类别表
+	ID 					唯一标识
+	cate_name			类别名称
+	cate_description	类别描述
+	cate_status			状态(0启用 1停用)
+	create_time			创建时间
+	create_userID		创建人ID
+	create_userlogin	创建人姓名
+
+
+
+
+==============================================
+{"id":4520699219,"author_name":"\u5343\u91cc\u5171\u5a75\u5a1fxu","first_post_id":88845086835,"reply_num":2,"is_bakan":null,"vid":"","is_good":null,"is_top":null,"is_protal":null,"is_membertop":null}
+
+
+
+
+
+
+
