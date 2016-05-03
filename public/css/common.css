@@ -72,3 +72,10 @@ input[type=text] { border: 1px solid #eee }
 .box-tool .pagination { margin: 0; }
 .box-tool .glyphicon-search { cursor: pointer; }
 .box.box-success .pagination li.active { background-color: #00a65a; }
+
+/*表单*/
+.form-group{margin-bottom: 15px;}
+.form-control{display: block;height: 35px;width: 100%;color: #333;background-color: #fff;  
+	-webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;}
