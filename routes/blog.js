@@ -6,4 +6,8 @@ router.get('/', function(req, res, next) {
 
 });
 
+
+router.get('/area:province', function(req, res, next) {
+	var prov = req.params('province');
+});
 module.exports = router;

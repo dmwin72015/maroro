@@ -100,8 +100,6 @@ define(function(require, exports, module) {
             return aTmp;
         }
 
-
-
         /***内部调用类（单例模式）， 存放公共信息**/
         var _DM = {
             // srcEle: this,
@@ -276,7 +274,7 @@ define(function(require, exports, module) {
                             clearInterval(_this.timer);
                         },
                         start: function() {
-                            _DM.autoGo.call(_this, opt)
+                            
                         }
                     };
                 });
@@ -300,6 +298,5 @@ define(function(require, exports, module) {
         carouse.stop();
         alert('停止播放');
     })
-
 
 });
