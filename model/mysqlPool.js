@@ -73,6 +73,7 @@ var tools = {
         baseQuery(sql,[name],cb);
     },
     query:baseQuery1,
-    queryBlur:baseQuery2
+    queryBlur:baseQuery2,
+    baseQuery :baseQuery
 };
 module.exports  = tools;

@@ -90,6 +90,6 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
+global.staticPath = 'http://localhost';
 
 module.exports = app;

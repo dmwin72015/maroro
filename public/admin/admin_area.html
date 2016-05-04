@@ -13,7 +13,7 @@
 </head>
 
 <body class="myadmin-skin">
-<!-- 顶部 -->
+    <!-- 顶部 -->
     <header class="row">
         <nav class="navbar navbar-fixed-top ">
             <div class="navbar-header">
@@ -65,7 +65,7 @@
                         <img src="../images/my_l.jpg" alt="">
                     </a>
                     <div class="user-info">
-                        当前时间:2016-05-03
+                        <span>当前时间:2016-05-03</span>
                         <i class="fa fa-sort-down"></i>
                     </div>
                 </div>
@@ -143,13 +143,80 @@
                 <!-- 实际内容 -->
                 <div class="box box-border">
                     <table class="" id="china">
-                        
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>国家</th>
+                                <th>编号</th>
+                                <th>省(自治区/直辖市)</th>
+                                <th>编号</th>
+                                <th>市(区)</th>
+                                <th>编号</th>
+                                <th>县</th>
+                                <th>编号</th>
+                                <th>乡(镇)</th>
+                                <th>编号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>中国</td>
+                                <td>1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>中国</td>
+                                <td>1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>中国</td>
+                                <td>1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>中国</td>
+                                <td>1</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
                 <div class="box box-border">
                     <form action="">
                         <div class="form-group"></div>
-
                     </form>
                 </div>
             </div>
@@ -166,7 +233,7 @@ $('#settings').click(function() {
     $('#set_frined_bar').toggleClass('hide');
     // $('#set_frined_bar').css('right', '-280px');
 });
-$('#toggleLeftSideBar').click(function(){
+$('#toggleLeftSideBar').click(function() {
     $('#menu_list').toggleClass('min');
     $('.user-pic').toggleClass('min');
     $('#main_wraper').toggleClass('full');

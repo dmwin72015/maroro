@@ -1,13 +1,13 @@
 /**
  * Created by Administrator on 2016/1/13.
  */
-var express = require('express');
-var router = express.Router();
-var User = require('../model/UserDao');
-var fs = require('fs');
+const express = require('express');
+const router = express.Router();
+const tools = require('../model/mysqlPool');
+const query = tools.baseQuery;
 /* 后台 */
 
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
     //TODO 怎么获取应用的根目录
     var url = process.cwd() + '/public' + req.baseUrl + '/index.html';
     fs.exists(url, (exists) => {
@@ -20,9 +20,7 @@ router.get('/', function(req, res, next) {
 
     //res.redirect(304,'./public/admin/index.html')
     //next();
-});
-
-router.get('/getUserList', function(req, res, next) {
+}).get('/getUserList', (req, res, next) => {
     var user = new User();
     user.findAll(function(f, result) {
         if (f) {
@@ -32,13 +30,26 @@ router.get('/getUserList', function(req, res, next) {
         res.send(result);
         res.end();
     });
-});
-router.get('/addEvent', function(req, res, next) {
+}).get('/addEvent', (req, res, next) => {
 
-});
-router.get('/api:id', function(req, res, next) {
+}).get('/api:id', (req, res, next) => {
 
 
 
+}).get('/area', (req, res, next) => {
+    res.redirect('area/all');
+}).get('/area/:type', (req, res, next) => {
+    var type = req.params.type || all;
+    console.log(type,staticPath);
+    var params = req.body;
+    console.log(params);
+    var sql = 'SELECT * FROM blog_area_f WHERE code1 = ? OR (code1 IS NULL AND country_code=?) ;';
+    var data = ['1011', 1];
+    query(sql, data, (rows) => {
+        res.render('admin/view_admin_area', {
+            path:global.staticPath,
+            row: rows
+        })
+    });
 });
 module.exports = router;
