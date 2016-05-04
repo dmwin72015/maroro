@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>后台-地域查询</title>
+    <link rel="stylesheet" href="{{d.path}}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{d.path}}/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{d.path}}/css/common.css" />
+    <link rel="stylesheet" href="{{d.path}}/css/admin/admin.css">
+</head>
+
+<body class="myadmin-skin">
+    <!-- 顶部 -->
+    <header class="row">
+        <nav class="navbar navbar-fixed-top ">
+            <div class="navbar-header">
+                <a href="javascript:;" class="btn btn-myadmin " id="toggleLeftSideBar">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <ul class="nav navbar-right fn-links">
+                <!-- <li>
+                    <a href="javascript:;" class="user-logo"><img src="../images/my.jpg" alt=""></a>
+                </li> -->
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-envelope"></i>
+                        <span class="label label-warning">99</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-bell"></i>
+                        <span class="label label-danger">99+</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-sign-out"></i>退出
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="" id="settings">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" id="friends_list">
+                        <i class="fa fa-comments-o"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 内容区域 -->
+    <div class="main-wrapper">
+        <!-- 左侧菜单导航 -->
+        <section class="side-bar left" id="menu_list">
+            <div class="user-profile-menu">
+                <div style="width: 100%;height:100%;cursor: pointer;">
+                    <a href="javascript:;" class="user-pic">
+                        <img src="{{d.path}}/images/my_l.jpg" alt="">
+                    </a>
+                    <div class="user-info">
+                        <span>当前时间:2016-05-03</span>
+                        <i class="fa fa-sort-down"></i>
+                    </div>
+                </div>
+                <ul class="user-menu">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <ul class="main-fn-menu">
+                <li class="">
+                    <a href="javascript:;">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                <li class="sub-menu open">
+                    <a href="javascript:;">
+                        <i class="fa fa-cog"></i>参数配置
+                    </a>
+                    <ul>
+                        <li><a href="javascript:;">子菜单</a></li>
+                        <li><a href="javascript:;">子菜单</a></li>
+                        <li class="active"><a href="javascript:;">中国地域</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-user"></i>用户管理
+                    </a>
+                    <ul>
+                        <li><a href="javascript:;">子菜单</a></li>
+                        <li><a href="javascript:;">子菜单</a></li>
+                        <li class=""><a href="javascript:;">子菜单</a></li>
+                    </ul>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-home"></i>blog管理
+                    </a>
+                    <li><a href="javascript:;">子菜单</a></li>
+                    <li><a href="javascript:;">子菜单</a></li>
+                    <li class=""><a href="javascript:;">子菜单</a></li>
+                </li>
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-line-chart"></i>数据
+                    </a>
+                    <li><a href="javascript:;">子菜单</a></li>
+                    <li><a href="javascript:;">子菜单</a></li>
+                    <li class=""><a href="javascript:;">子菜单</a></li>
+                </li>
+            </ul>
+        </section>
+        <!-- 右侧功能导航 -->
+        <section class="side-bar right hide" id="set_frined_bar">
+            <nav class="">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="javascript:;">个人设置</a></li>
+                    <li><a href="javascript:;">好友列表</a></li>
+                </ul>
+            </nav>
+            <aside class="tab-content">
+                <ul>
+                    <li>社hi西安U型娘</li>
+                    <li>社hi西安U型娘</li>
+                    <li>社hi西安U型娘</li>
+                    <li>社hi西安U型娘</li>
+                    <li>社hi西安U型娘</li>
+                </ul>
+            </aside>
+            <aside>
+            </aside>
+        </section>
+        <!-- 主要内容区 -->
+        <section class="row content-wrapper" id="main_wraper">
+            <div class="container">
+                <!-- 当前位置 -->
+                <nav class="page-location">
+                    <ol class=" breadcrumb">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">用户管理</a></li>
+                        <li class="active">添加用户</li>
+                    </ol>
+                </nav>
+                <!-- 实际内容 -->
+                <div class="box box-border box-success">
+                    <table class="admin-table" id="china">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>国家</th>
+                                <th>编号</th>
+                                <th>省(自治区/直辖市)</th>
+                                <th>编号</th>
+                                <th>市(区)</th>
+                                <th>编号</th>
+                                <th>县</th>
+                                <th>编号</th>
+                                <th>乡(镇)</th>
+                                <th>编号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{# if(d.row.length>0){ var x = 0; for(var i= 0;i
+                            <d.row.length;i++){ }} <tr>
+                                <td>{{++x}}</td>
+                                <td>{{d.row[i].country}}</td>
+                                <td>{{d.row[i].country_code}}</td>
+                                <td>{{d.row[i].name1 || ''}}</td>
+                                <td>{{d.row[i].code1 || ''}}</td>
+                                <td>{{d.row[i].name2 || ''}}</td>
+                                <td>{{d.row[i].code2 || ''}}</td>
+                                <td>{{d.row[i].name3 || ''}}</td>
+                                <td>{{d.row[i].code3 || ''}}</td>
+                                <td>{{d.row[i].name4 || ''}}</td>
+                                <td>{{d.row[i].code4 || ''}}</td>
+                                </tr>
+                                {{# } }else{ }}
+                                <tr>
+                                    <td colspan="11">未找到符合条件的数据</td>
+                                </tr>
+                                {{# } }}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="box box-border">
+                    <form action="">
+                        <div class="form-group"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="row">
+    </footer>
+</body>
+<script src="{{d.path}}/js/tools/jquery-1.12.2.min.js"></script>
+<script src="{{d.path}}/js/tools/jquery.dataTables.min.js"></script>
+<script src="{{d.path}}/js/modules/admin.js"></script>
+<script>
+$('#settings').click(function() {
+    $('#set_frined_bar').toggleClass('hide');
+    /*$('#set_frined_bar').css('right', '-280px');*/
+});
+$('#toggleLeftSideBar').click(function() {
+    $('#menu_list').toggleClass('min');
+    $('.user-pic').toggleClass('min');
+    $('#main_wraper').toggleClass('full');
+});
+</script>
+
+</html>
