@@ -52,4 +52,16 @@ router.get('/', (req, res, next) => {
         })
     });
 });
+router.post('/area',(req, res, next) =>{
+    /*
+        itemCount   总记录数量
+        pageNumber  页码
+        pageSize    每页条数
+        pageTotal   总页数
+    */ 
+    var params = req.body;
+    console.log(params);
+    next();
+
+});
 module.exports = router;
