@@ -1,25 +1,62 @@
 $(function() {
-    // body...
     $('.sub-menu>a').on('click', function() {
-        if ($(this).parent().hasClass('open')) {
-            $(this).next().hide();
+        $(this).toggleClass('open');
+        if ($(this).hasClass('open')) {
+            $(this).next().slideDown(200);
         } else {
-            $(this).next().show();
+            $(this).next().slideUp(200);
         }
-        $(this).parent().toggleClass('open');
+
     });
-/**
-l - Length changing 每页显示多少条数据选项
-f - Filtering input 搜索框
-t - The Table 表格
-i - Information 表格信息
-p - Pagination 分页按钮
-r - pRocessing 加载等待显示信息
-< and > - div elements 一个div元素
-<"#id" and > - div with an id 指定id的div元素
-<"class" and > - div with a class 指定样式名的div元素
-<"#id.class" and > - div with an id and class 指定id和样式的div元素
-*/
+    // 登录页面小动画
+    $('#password').on({
+        'focus': function() {
+            $('#left_hand').addClass('close_eye');
+            $('#right_hand').addClass('close_eye');
+        },
+        'blur': function() {
+            $('#left_hand').removeClass('close_eye');
+            $('#right_hand').removeClass('close_eye');
+        }
+    });
+    $('.user-info').click(function() {
+        $(this).toggleClass('show');
+        if ($(this).hasClass('show')) {
+            $('.user-menu').slideDown(200);
+        } else {
+            $('.user-menu').slideUp(200);
+        }
+    });
+    var $oTime = $('#now_time');
+
+    function setObjTime(obj) {
+        obj.html(getTime());
+        // setTimeout(setObjTime(obj),1000);
+    }
+    setObjTime($oTime);
+
+    function getTime() {
+        var oD = new Date;
+        var y = oD.getFullYear();
+        var m = oD.getMonth() + 1;
+        var d = oD.getDate();
+        var wk = oD.getDay();
+        return y + '-' + (m < 9 ? '0' + 9 : m) + '-' + (d < 9 ? '0' + d : d) + '<i> 星期' + '日一二三四五六'.charAt(wk) + '</i>';
+    }
+
+    /*
+        l - Length changing 每页显示多少条数据选项
+        f - Filtering input 搜索框
+        t - The Table 表格
+        i - Information 表格信息
+        p - Pagination 分页按钮
+        r - pRocessing 加载等待显示信息
+        < and > - div elements 一个div元素
+        <"#id" and > - div with an id 指定id的div元素
+        <"class" and > - div with a class 指定样式名的div元素
+        <"#id.class" and > - div with an id and class 指定id和样式的div元素
+    */
+
     //dataTable demo
     $(function() {
         var oTable = $('#china_area').dataTable({
@@ -47,16 +84,16 @@ r - pRocessing 加载等待显示信息
             language: {
                 url: '../../js/i18n/zh_CN.json'
             },
-            columnDefs: [{ 
-            	//列渲染，针对于每一列的操作，例如数据处理，修改样式等等。
+            columnDefs: [{
+                //列渲染，针对于每一列的操作，例如数据处理，修改样式等等。
                 // 'render': function(data, type, row) {
                 //     // return data + '(' + row['money'] + ')';
                 //     return data;
                 // },
                 // 'targets': 0
             }],
-            createdRow: function(row, data, index) { 
-            	//创建行回调，就是针对每一行进行操作，例如数据处理，修改样式等等。
+            createdRow: function(row, data, index) {
+                //创建行回调，就是针对每一行进行操作，例如数据处理，修改样式等等。
                 //row 每行dom元素
                 //data 所有数据
                 //index 行号
@@ -70,6 +107,7 @@ r - pRocessing 加载等待显示信息
             //当处理大数据时，延迟渲染数据，有效提高Datatables处理能力
             "deferRender": true
         });
-        $('#china_area_filter').find('input').attr('placeholder','搜索');
+        $('#china_area_filter').find('input').attr('placeholder', '搜索');
     });
+
 })

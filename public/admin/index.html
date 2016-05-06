@@ -1,60 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0064)http://www.17sucai.com/preview/137615/2015-01-15/demo/index.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
 
-<head>
-    <meta charset="UTF-8">
-    <title>测试弹框插件</title>
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/layer-default.css">
-    <script src="../js/tools/jquery-1.12.2.min.js"></script>
-    <script src="../js/modules/myLayers.js"></script>
-    <style>
-        #test{
-            padding:5px;
-            border:1px solid #eee;
-            color:#333;
-        }
-        #box{
-            width: 300px;
-            height: 300px;
-            background-color: #008CBA;
-        }
-    </style>
-</head>
+<HEAD>
+    <META content="IE=11.0000" http-equiv="X-UA-Compatible">
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <TITLE>登录页面</TITLE>
+    <META name="GENERATOR" content="MSHTML 11.00.9600.17496">
+    <script></script>
+    <link rel="stylesheet" href="{{d.path}}/css/admin/admin.css">
+    <script src="{{d.path}}/js/tools/jquery-1.12.2.min.js"></script>
+    <script src="{{d.path}}/js/tools/jquery.dataTables.min.js"></script>
+    <script src="{{d.path}}/js/modules/admin.js"></script>
+    
+</HEAD>
 
-<body>
-    <input type="button" value="测试遮罩层" id="test">
-    <div class="box" id="box">
-
-
-
+<BODY>
+    <DIV class="top_div"></DIV>
+    <DIV style="background: rgb(255, 255, 255); margin: -100px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 200px; text-align: center;">
+        <DIV style="width: 165px; height: 96px; position: absolute;">
+            <DIV class="tou"></DIV>
+            <DIV class="initial_left_hand" id="left_hand"></DIV>
+            <DIV class="initial_right_hand" id="right_hand"></DIV>
+        </DIV>
+        <P style="padding: 30px 0px 10px; position: relative;">
+            <SPAN class="u_logo"></SPAN>
+            <INPUT class="ipt" type="text" placeholder="请输入用户名或邮箱" value="">
+        </P>
+        <P style="position: relative;">
+            <SPAN class="p_logo"></SPAN>
+            <INPUT class="ipt" id="password" type="password" placeholder="请输入密码" value="">
+        </P>
+        <DIV style="height: 50px; line-height: 50px; margin-top: 30px; border-top-color: rgb(231, 231, 231); border-top-width: 1px; border-top-style: solid;">
+            <P style="margin: 0px 35px 20px 45px;">
+                <SPAN style="float: left;"><A style="color: rgb(204, 204, 204);" 
+href="#">忘记密码?</A></SPAN>
+                <SPAN style="float: right;"><A style="color: rgb(204, 204, 204); margin-right: 10px;" 
+href="#">注册</A>  
+              <A style="background: rgb(0, 142, 173); padding: 7px 10px; border-radius: 4px; border: 1px solid rgb(26, 117, 152); border-image: none; color: rgb(255, 255, 255); font-weight: bold;" 
+href="#">登录</A> 
+           </SPAN> </P>
+        </DIV>
+    </DIV>
+    <div style="text-align:center;">
+        <p>来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
     </div>
-</body>
-<script>
-$(function() {
-    var layer1 = $('body').eq(0).Layers({
-        style:{
-            'margin-top':'50px'
-        }
-    });
-    var layer2 = $.Layers();
-    console.log(layer1 == layer2);
-    $('#test').click(function() {
-        // layer.confirm('嘻嘻嘻嘻！', function(ev) {
-        //     alert('YES');
-        // }, function(ev) {
-        //     alert('NO');
-        // });
-        layer1.confirm('哈哈哈',{
-            infoText:'五的',
-            titleText:false
-        },function(){
-//            alert('OK');
-        },function(){
-//            alert('NO');
-        });
-    });
-})
-</script>
+</BODY>
 
-</html>
+</HTML>
