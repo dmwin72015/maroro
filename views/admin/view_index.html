@@ -18,30 +18,33 @@
 <BODY style="background-color: #ebebeb">
     <div class="top_div"></div>
     <div class="login_box">
-        <div class="happy_pic">
-            <div class="tou"></div>
-            <div class="initial_hand left" id="left_hand"></div>
-            <div class="initial_hand right" id="right_hand"></div>
-        </div>
-        <p class="username_box">
-            <span class="u_logo"></span>
-            <input class="ipt" type="text" placeholder="请输入用户名或邮箱" value="">
-        </p>
-        <p>
-            <span class="p_logo"></span>
-            <input class="ipt" id="password" type="password" placeholder="请输入密码" value="">
-        </p>
-        <div class="fn_links">
-            <p>
-                <span class="forget_pass" style="">
+        <form id="login_form" role="form">
+            <div class="happy_pic">
+                <div class="tou"></div>
+                <div class="initial_hand left" id="left_hand"></div>
+                <div class="initial_hand right" id="right_hand"></div>
+            </div>
+            <p class="username_box">
+                <span class="u_logo"></span>
+                <input class="ipt" name="username" type="text" placeholder="请输入用户名或邮箱" value="">
+            </p>
+            <p class="password_box">
+                <span class="p_logo"></span>
+                <input class="ipt" name="password" id="password" type="password" placeholder="请输入密码" value="">
+            </p>
+            <p class="error_tip">{{ d.error ? d.error.msg:''}}</p>
+            <div class="fn_links">
+                <p>
+                    <span class="forget_pass" style="">
                     <a style="" href="#">忘记密码?</a>
                 </span>
-                <span class="reg_login" >
+                    <span class="reg_login">
                     <a href="#">注册</a>  
-                    <a id="login_btn" style="" href="#">登录</a> 
+                    <a id="login_btn"  href="javascript:;">登录</a> 
                 </span>
-            </p>
-        </div>
+                </p>
+            </div>
+        </form>
     </div>
 </BODY>
 

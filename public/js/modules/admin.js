@@ -27,6 +27,12 @@ $(function() {
             $('.user-menu').slideUp(200);
         }
     });
+    $('#login_btn').click(function(){
+        $('#login_form').attr({
+            'action':'login',
+            'method':'post'
+        }).submit();
+    });
     var $oTime = $('#now_time');
 
     function setObjTime(obj) {

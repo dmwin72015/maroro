@@ -33,8 +33,8 @@ a {
     border: 1px solid rgb(231, 231, 231);
     border-image: none;
     width: 400px;
-    height: 220px;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .username_box {
@@ -42,14 +42,22 @@ a {
     position: relative;
 }
 
-.login_box>p {
+.password_box {
     position: relative;
 }
 
+.login_box .error_tip{
+    width: 337px;
+    margin:5px auto;
+    padding: 3px 0;
+    color: red;
+    text-align: left;
+    font-size: 12px;
+}
 .fn_links {
     height: 50px;
     line-height: 50px;
-    margin-top: 30px;
+    margin-top: 10px;
     border-top-color: rgb(231, 231, 231);
     border-top-width: 1px;
     border-top-style: solid;

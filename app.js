@@ -7,12 +7,13 @@ var bodyParser = require('body-parser');
 var laytpl = require('laytpl');
 var fs = require('fs');
 var FileStreamRotator = require('file-stream-rotator');
-
+var session = require('express-session');
+var settings = require('./settings');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var weixin = require('./routes/weixin');
-var bg = require('./routes/bg');
+var admin = require('./routes/admin');
 var note = require('./routes/note');
 var blog = require('./routes/blog');
 var app = express();
@@ -42,17 +43,18 @@ app.use(logger(':remote-addr【:date】:method┇:url┇:response-time ms ', { s
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 // app.use(logger('dev'));
+app.use(session(settings));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public'), {
-    'index': '/resume/resume.html'
+    'index': '/admin/index.html'
 }));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/admin', bg);
+app.use('/admin', admin);
 app.use('/api', note);
 app.use('/weixin', weixin);
 app.use('/blog', blog);
