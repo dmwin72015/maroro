@@ -1,0 +1,82 @@
+<section class="side-bar left" id="menu_list">
+    <div class="user-profile-menu">
+        <div style="width: 100%;height:100%;cursor: pointer;">
+            <a href="javascript:;" class="user-pic">
+                <img src="{{d.path}}/images/my_l.jpg" alt="">
+            </a>
+            <div class="user-info">
+                <span id="now_time"></span>
+                <i class="fa fa-sort-down"></i>
+            </div>
+        </div>
+    </div>
+    <ul class="user-menu" style="display: none">
+        <li><a href="javascript:;">菜单一</a></li>
+        <li><a href="javascript:;">菜单二</a></li>
+        <li><a href="javascript:;">菜单三</a></li>
+        <li><a href="javascript:;">菜单四</a></li>
+    </ul>
+    <ul class="main-fn-menu">
+        <li class="">
+            <a href="javascript:;">
+                <i class="fa fa-home"></i>首页
+            </a>
+        </li>
+        <li class="sub-menu ">
+            <a href="javascript:;" class="open">
+                <i class="fa fa-cog"></i>参数配置
+            </a>
+            <ul>
+                <li><a href="javascript:;">子菜单</a></li>
+                <li><a href="javascript:;">子菜单</a></li>
+                <li><a href="javascript:;">地域查询</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu ">
+            <a href="javascript:;" class="open">
+                <i class="fa fa-user"></i>用户管理
+            </a>
+            <ul>
+                <li><a href="javascript:;">子菜单</a></li>
+                <li><a href="javascript:;">子菜单</a></li>
+                <li class=""><a href="javascript:;">子菜单</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu">
+            <a href="javascript:;" class="open">
+                <i class="fa fa-home"></i>blog管理
+            </a>
+            <ul>
+                <li><a href="javascript:;">blog查询</a></li>
+                <li><a href="/admin/blog/add">blog添加</a></li>
+                <li class=""><a href="javascript:;">子菜单</a></li>
+            </ul>
+        </li>
+        <li class="sub-menu ">
+            <a href="javascript:;" class="open">
+                <i class="fa fa-line-chart"></i>数据
+            </a>
+            <ul>
+                <li><a href="javascript:;">子菜单</a></li>
+                <li><a href="javascript:;">子菜单</a></li>
+                <li class=""><a href="javascript:;">子菜单</a></li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<script src="{{d.path}}/js/tools/jquery-1.12.2.min.js"></script>
+<script src="{{d.path}}/js/tools/jquery.dataTables.min.js"></script>
+<script src="{{d.path}}/js/modules/admin.js"></script>
+<script>
+$(function() {
+    $('#settings').click(function() {
+        $('#set_frined_bar').toggleClass('hide');
+        /*$('#set_frined_bar').css('right', '-280px');*/
+    });
+    $('#toggleLeftSideBar').click(function() {
+        $('#menu_list').toggleClass('min');
+        $('.user-pic').toggleClass('min');
+        $('#main_wraper').toggleClass('full');
+    });
+})
+</script>

@@ -85,7 +85,7 @@ $(function() {
                 [15, 30, 45, -1],
                 ["15条", "30条", "45条", "所有"]
             ], //设置翻页选项的条数，第一个是数量，第二个是对应的名字（可不写）
-            dom: '<".onTableTop"lf>rt<"afterTableBot"pi><"clear">',
+            dom: '<"onTableTop"lf>rt<"afterTableBot"pi><"clear">',
             //dom:'<"toolbar">frtip',
             language: {
                 url: '../../js/i18n/zh_CN.json'
@@ -116,4 +116,4 @@ $(function() {
         $('#china_area_filter').find('input').attr('placeholder', '搜索');
     });
 
-})
+});

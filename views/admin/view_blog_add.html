@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <title>后台-添加blog</title>
+    <link rel="stylesheet" href="{{d.path}}/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{d.path}}/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{d.path}}/css/common.css" />
+    <link rel="stylesheet" href="{{d.path}}/css/admin/admin.css">
+</head>
+
+<body class="myadmin-skin">
+    <!-- 顶部 -->
+    {{ include head}}
+    <!-- 内容区域 -->
+    <div class="main-wrapper">
+        <!-- 左侧菜单导航 -->
+        {{ include left_nav }}
+        <!-- 右侧功能导航 -->
+        {{ include right_nav}}
+        <!-- 主要内容区 -->
+        <section class="row content-wrapper" id="main_wraper">
+            <div class="container">
+                <!-- 当前位置 -->
+                <nav class="page-location">
+                    <ol class=" breadcrumb">
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li class="active">Blog添加</li>
+                    </ol>
+                </nav>
+                <!-- 实际内容 -->
+                <div class="box box-border box-success">
+                    <div class="form_group">
+                    	<input type="text" placeholder="标题">
+                    </div>
+                </div>
+                <div class="box box-border">
+                    <form action="">
+                        <div class="form-group"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="row">
+    </footer>
+</body>
+</html>

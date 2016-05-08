@@ -1,9 +1,6 @@
-<!DOCTYpE HTML pUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
-<!-- saved from url=(0064)http://www.17sucai.com/preview/137615/2015-01-15/demo/index.html -->
-<!DOCTYpE html pUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<HTML xmlns="http://www.w3.org/1999/xhtml">
-
-<HEaD>
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
     <METa content="IE=edge,Chrome=1" http-equiv="X-Ua-Compatible">
     <METa http-equiv="Content-Type" content="text/html; charset=utf-8">
     <TITLE>登录页面</TITLE>
@@ -13,39 +10,55 @@
     <script src="{{d.path}}/js/tools/jquery-1.12.2.min.js"></script>
     <script src="{{d.path}}/js/tools/jquery.dataTables.min.js"></script>
     <script src="{{d.path}}/js/modules/admin.js"></script>
-</HEaD>
+</head>
 
 <BODY style="background-color: #ebebeb">
     <div class="top_div"></div>
-    <div class="login_box">
-        <form id="login_form" role="form">
-            <div class="happy_pic">
-                <div class="tou"></div>
-                <div class="initial_hand left" id="left_hand"></div>
-                <div class="initial_hand right" id="right_hand"></div>
-            </div>
-            <p class="username_box">
-                <span class="u_logo"></span>
-                <input class="ipt" name="username" type="text" placeholder="请输入用户名或邮箱" value="">
-            </p>
-            <p class="password_box">
-                <span class="p_logo"></span>
-                <input class="ipt" name="password" id="password" type="password" placeholder="请输入密码" value="">
-            </p>
-            <p class="error_tip">{{ d.error ? d.error.msg:''}}</p>
-            <div class="fn_links">
-                <p>
-                    <span class="forget_pass" style="">
-                    <a style="" href="#">忘记密码?</a>
-                </span>
-                    <span class="reg_login">
-                    <a href="#">注册</a>  
-                    <a id="login_btn"  href="javascript:;">登录</a> 
-                </span>
+    <div class="content_wrap">
+        <div class="content_box login">
+            <form id="login_form" role="form">
+                <div class="happy_pic">
+                    <div class="tou"></div>
+                    <div class="initial_hand left" id="left_hand"></div>
+                    <div class="initial_hand right" id="right_hand"></div>
+                </div>
+                <p class="form_group username">
+                    <span class="u_logo"></span>
+                    <input class="ipt" name="username" type="text" placeholder="请输入用户名或邮箱" value="">
                 </p>
-            </div>
-        </form>
+                <p class="form_group password">
+                    <span class="p_logo"></span>
+                    <input class="ipt" name="password" id="password" type="password" placeholder="请输入密码" value="">
+                </p>
+                <p class="form_group error_tip">{{ d.error ? d.error.msg:''}}</p>
+                <div class="form_group fn_btn">
+                    <p>
+                        <span class="forget_pass" style="">
+                            <a style="" href="admin_home.html">忘记密码?</a>
+                        </span>
+                        <span class="reg_login">
+                            <a href="#">注册</a>  
+                            <a id="login_btn"  href="javascript:;">登录</a> 
+                        </span>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="">
+            
+        </div>
     </div>
+    
+<!--     <footer class="page_foot">
+        <a href="">关于我们</a>
+        <a href="">友情链接</a>
+        <a href="">快乐使馆</a>
+        <a href="">JavaScript</a>
+    </footer> -->
 </BODY>
+<script>
+var data = '{name:"张三",age:24}';
+window.name = data;
+</script>
 
 </HTML>

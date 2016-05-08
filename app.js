@@ -10,6 +10,13 @@ var FileStreamRotator = require('file-stream-rotator');
 var session = require('express-session');
 var settings = require('./settings');
 
+//初始化全局居静态变量
+global.staticPath = 'http://localhost';
+
+//拦截器
+var admin_filter = require('./filter/admin_filter'); 
+
+//路由器配置
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var weixin = require('./routes/weixin');
@@ -17,6 +24,7 @@ var admin = require('./routes/admin');
 var note = require('./routes/note');
 var blog = require('./routes/blog');
 var app = express();
+
 
 // view engine setup 模板设置
 app.set('views', path.join(__dirname, 'views'));
@@ -52,6 +60,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
     'index': '/admin/index.html'
 }));
 
+// app.all('/admin/*',admin_filter)
 app.use('/', routes);
 app.use('/users', users);
 app.use('/admin', admin);
@@ -92,6 +101,4 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-global.staticPath = 'http://localhost';
-
 module.exports = app;

@@ -14,136 +14,13 @@
 
 <body class="myadmin-skin">
     <!-- 顶部 -->
-    <header class="row">
-        <nav class="navbar navbar-fixed-top ">
-            <div class="navbar-header">
-                <a href="javascript:;" class="btn btn-myadmin " id="toggleLeftSideBar">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-            <ul class="nav navbar-right fn-links">
-                <!-- <li>
-                    <a href="javascript:;" class="user-logo"><img src="../images/my.jpg" alt=""></a>
-                </li> -->
-                <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-envelope"></i>
-                        <span class="label label-warning">99+</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-bell"></i>
-                        <span class="label label-danger">99+</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;">
-                        <i class="fa fa-sign-out"></i>退出
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" class="" id="settings">
-                        <i class="fa fa-tasks"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="javascript:;" id="friends_list">
-                        <i class="fa fa-comments-o"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    {{ include head}}
     <!-- 内容区域 -->
     <div class="main-wrapper">
         <!-- 左侧菜单导航 -->
-        <section class="side-bar left" id="menu_list">
-            <div class="user-profile-menu">
-                <div style="width: 100%;height:100%;cursor: pointer;">
-                    <a href="javascript:;" class="user-pic">
-                        <img src="{{d.path}}/images/my_l.jpg" alt="">
-                    </a>
-                    <div class="user-info">
-                        <span id="now_time"></span>
-                        <i class="fa fa-sort-down"></i>
-                    </div>
-                </div>
-            </div>
-            <ul class="user-menu" style="display: none">
-                <li><a href="javascript:;">菜单一</a></li>
-                <li><a href="javascript:;">菜单二</a></li>
-                <li><a href="javascript:;">菜单三</a></li>
-                <li><a href="javascript:;">菜单四</a></li>
-            </ul>
-            <ul class="main-fn-menu">
-                <li class="">
-                    <a href="javascript:;">
-                        <i class="fa fa-home"></i>首页
-                    </a>
-                </li>
-                <li class="sub-menu ">
-                    <a href="javascript:;" class="open">
-                        <i class="fa fa-cog"></i>参数配置
-                    </a>
-                    <ul>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li class="active"><a href="javascript:;">地域查询</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu ">
-                    <a href="javascript:;" class="open">
-                        <i class="fa fa-user"></i>用户管理
-                    </a>
-                    <ul>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li class=""><a href="javascript:;">子菜单</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu">
-                    <a href="javascript:;" class="open">
-                        <i class="fa fa-home"></i>blog管理
-                    </a>
-                    <ul>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li class=""><a href="javascript:;">子菜单</a></li>
-                    </ul>
-                </li>
-                <li class="sub-menu ">
-                    <a href="javascript:;" class="open">
-                        <i class="fa fa-line-chart"></i>数据
-                    </a>
-                    <ul>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li><a href="javascript:;">子菜单</a></li>
-                        <li class=""><a href="javascript:;">子菜单</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+        {{ include left_nav }}
         <!-- 右侧功能导航 -->
-        <section class="side-bar right hide" id="set_frined_bar">
-            <nav class="">
-                <ul class="nav nav-tabs">
-                    <li class="active"><a href="javascript:;">个人设置</a></li>
-                    <li><a href="javascript:;">好友列表</a></li>
-                </ul>
-            </nav>
-            <aside class="tab-content">
-                <ul>
-                    <li>社hi西安U型娘</li>
-                    <li>社hi西安U型娘</li>
-                    <li>社hi西安U型娘</li>
-                    <li>社hi西安U型娘</li>
-                    <li>社hi西安U型娘</li>
-                </ul>
-            </aside>
-            <aside>
-            </aside>
-        </section>
+        {{ include right_nav}}
         <!-- 主要内容区 -->
         <section class="row content-wrapper" id="main_wraper">
             <div class="container">
@@ -207,19 +84,5 @@
     <footer class="row">
     </footer>
 </body>
-<script src="{{d.path}}/js/tools/jquery-1.12.2.min.js"></script>
-<script src="{{d.path}}/js/tools/jquery.dataTables.min.js"></script>
-<script src="{{d.path}}/js/modules/admin.js"></script>
-<script>
-$('#settings').click(function() {
-    $('#set_frined_bar').toggleClass('hide');
-    /*$('#set_frined_bar').css('right', '-280px');*/
-});
-$('#toggleLeftSideBar').click(function() {
-    $('#menu_list').toggleClass('min');
-    $('.user-pic').toggleClass('min');
-    $('#main_wraper').toggleClass('full');
-});
-</script>
 
 </html>
